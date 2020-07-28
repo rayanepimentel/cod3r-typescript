@@ -166,3 +166,14 @@ function multiplicar(numA: number, numB: number): number {
 
 //console.log(multiplicar(2, 'Bia'))//NaN não retornou numero inválido
 console.log(multiplicar(4.7,9))
+
+
+//tipo função
+
+let calculo: (numeroA: number, numeroB: number) => number
+//calculo = digaOi
+//calculo()
+
+calculo = multiplicar
+console.log(calculo(5,6))
+

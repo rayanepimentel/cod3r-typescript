@@ -125,3 +125,9 @@ function multiplicar(numA, numB) {
 }
 //console.log(multiplicar(2, 'Bia'))//NaN não retornou numero inválido
 console.log(multiplicar(4.7, 9));
+//tipo função
+var calculo;
+//calculo = digaOi
+//calculo()
+calculo = multiplicar;
+console.log(calculo(5, 6));
