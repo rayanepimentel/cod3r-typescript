@@ -68,3 +68,16 @@ let age : number
 let hobbies : boolean
 
 
+//array
+let myHobbies = ['Cozinhar', 'Dança'] //um array de string
+console.log(myHobbies[0])
+console.log(typeof myHobbies)//ele vai inferir como object
+
+//myHobbies = [100, 200]// continua sendo array, mas não é string
+//umas das coisas que podemos fazer é passar a let como array
+//podemos coloca que queremos qualquer tipo de array
+
+let myHobbies2: any [] = ['Cozinhar', 'Dança']
+myHobbies2 = [100, 200]
+
+//myHobbies2 = 100 //erro pq não é um array
