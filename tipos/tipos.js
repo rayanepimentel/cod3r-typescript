@@ -176,3 +176,14 @@ var funcionario = {
     }
 };
 console.log(funcionario.supervisores[0], funcionario.baterPonto(10));
+var funcionario2 = {
+    supervisores: ['Bia', 'Chico'],
+    baterPonto: function (horario) {
+        if (horario <= 8) {
+            return 'Ponto normal';
+        }
+        else {
+            return 'Fora do horário';
+        }
+    }
+};

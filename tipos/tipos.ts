@@ -230,7 +230,7 @@ let funcionario: {
     baterPonto: (horas: number) => string
 } = {
     supervisores: ['Maria', 'João'],
-    baterPonto(horario: number): string{
+    baterPonto(horario: number): string {
         if(horario <= 8){
             return 'Ponto normal'
         }else {
@@ -241,5 +241,21 @@ let funcionario: {
 
 console.log(funcionario.supervisores[0], funcionario.baterPonto(10))
 
+//definindo tipos personalizados
+//Alias
 
+type Funcionario = {
+    supervisores: string[],
+    baterPonto: (horas: number) => string
+}
 
+let funcionario2: Funcionario = {
+    supervisores: ['Bia', 'Chico'],
+    baterPonto(horario: number) : string {
+        if(horario <= 8){
+            return 'Ponto normal'
+        }else {
+            return 'Fora do horário'
+        }
+    }
+}
