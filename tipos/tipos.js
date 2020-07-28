@@ -91,3 +91,9 @@ console.log(Cor.Laranja, Cor.Amarelo);
 console.log(Cor.Verde, Cor.Vermelho);
 console.log(Cor.Cinza, Cor.Lilas);
 //o ideal é deixar ele gerar os valores, sem fica passando
+//any
+var carro = 'BMW';
+console.log(carro);
+carro = { marca: 'BMW', ano: 2019 };
+console.log(carro);
+//não gerou nenhum erro
