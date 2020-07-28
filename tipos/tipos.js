@@ -155,3 +155,24 @@ user = {
     nome: 'João'
 };
 console.log(user);
+//Desafio
+/*
+Criar um objeto funcionário com:
+   -Array de strings com os nomes dos supervisores
+   -Função de bater ponto que recebe a hora(número) e retorna
+   uma string
+    -> Ponto nomal(<= 8)
+    -> Fora do horário (> 8 )
+*/
+var funcionario = {
+    supervisores: ['Maria', 'João'],
+    baterPonto: function (horario) {
+        if (horario <= 8) {
+            return 'Ponto normal';
+        }
+        else {
+            return 'Fora do horário';
+        }
+    }
+};
+console.log(funcionario.supervisores[0], funcionario.baterPonto(10));
