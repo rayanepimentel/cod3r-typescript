@@ -94,3 +94,26 @@ console.log(endereco)
 //verifica a quantidade, o tipo e a ordem
 endereco = ['Rua dos Bobos', 0]
 
+//enums
+//é uma estrutura com valores pre-definidos
+//exemplo: dias da semana. meses do ano, generos dos filmes
+
+enum Cor {
+    Cinza, //0
+    Lilas, //1
+    Verde = 100, //2
+    Azul = 10, //3
+    Laranja, //4
+    Amarelo, //5
+    Vermelho = 100 //6
+}
+
+let minhaCor: Cor = Cor.Verde
+console.log(minhaCor)
+
+console.log(Cor.Azul)
+console.log(Cor.Laranja, Cor.Amarelo)
+console.log(Cor.Verde, Cor.Vermelho)
+console.log(Cor.Cinza, Cor.Lilas)
+
+//o ideal é deixar ele gerar os valores, sem fica passando

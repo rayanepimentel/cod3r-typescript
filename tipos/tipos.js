@@ -71,3 +71,23 @@ var endereco = ['Av Principal', 99];
 console.log(endereco);
 //verifica a quantidade, o tipo e a ordem
 endereco = ['Rua dos Bobos', 0];
+//enums
+//é uma estrutura com valores pre-definidos
+//exemplo: dias da semana. meses do ano, generos dos filmes
+var Cor;
+(function (Cor) {
+    Cor[Cor["Cinza"] = 0] = "Cinza";
+    Cor[Cor["Lilas"] = 1] = "Lilas";
+    Cor[Cor["Verde"] = 100] = "Verde";
+    Cor[Cor["Azul"] = 10] = "Azul";
+    Cor[Cor["Laranja"] = 11] = "Laranja";
+    Cor[Cor["Amarelo"] = 12] = "Amarelo";
+    Cor[Cor["Vermelho"] = 100] = "Vermelho"; //6
+})(Cor || (Cor = {}));
+var minhaCor = Cor.Verde;
+console.log(minhaCor);
+console.log(Cor.Azul);
+console.log(Cor.Laranja, Cor.Amarelo);
+console.log(Cor.Verde, Cor.Vermelho);
+console.log(Cor.Cinza, Cor.Lilas);
+//o ideal é deixar ele gerar os valores, sem fica passando
