@@ -81,3 +81,16 @@ let myHobbies2: any [] = ['Cozinhar', 'Dança']
 myHobbies2 = [100, 200]
 
 //myHobbies2 = 100 //erro pq não é um array
+
+
+//tuplas
+//é um array, com a quantidade de tipos pre-definido
+//ex: quero um array que tenha 1 string e 2 numbers
+//obrigatoriamos é um array de 3 posições, 1 string e 2 numbers
+
+
+let endereco: [string, number] = ['Av Principal', 99]
+console.log(endereco)
+//verifica a quantidade, o tipo e a ordem
+endereco = ['Rua dos Bobos', 0]
+
