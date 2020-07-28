@@ -1,0 +1,83 @@
+1.5
+Setup:
+
+Node - npm install node
+
+node -v (verificar versão)
+
+TypeScript - npm i -g typescript (erro -> sudo npm i -g typescript)
+
+tsc -v
+
+
+
+para iniciar arquivo config typescript:
+
+tsc --init
+
+1.6
+
+Como compilar arquivo .ts manualmente:
+
+Ex: Crie um arquivo basico.ts
+
+const a : string = 'Teste TS!'
+console.log(a)
+Terminal: tsc basico.ts
+
+Ele vai criar um arquivo em Javascript
+
+basico.js
+basico.tsc
+
+
+Para executar: node basico.js
+
+Teste TS!
+
+
+
+Ou seja, chamei tsc passei o arquivo basico.ts no momento que ele executou, 
+ele fez o processo de compilação.
+
+
+1.7
+
+Instalar a extensão Code Runner e no terminal instalar ts-node
+
+npm i -g ts-node
+
+Ou seja ele pegou o arquivo .ts e gerou .ts
+
+1.8
+
+Executando .ts no html.
+
+
+
+index.html
+
+   <script src='aula01-introducao/basico.js'></script>
+
+
+
+Como arquivo vai ser interpretado pelo browser, ele não vai entender .ts e sim .js
+
+
+
+npm init -y
+
+No package.json, vamos criar script de execução (dependências)
+
+npm i -s live-server
+
+
+
+Dentro de scripts, start vamos chamar a dependência live-server e no terminal npm start
+
+Para o index.html detectar qualquer mudança no .ts, precisamos fazer de forma manual no terminal:
+ .tsc basico.ts ou seja essa parte de compilação não estar sendo feita de forma automática.
+
+Ao chamar tsc -w ela vai ficar monitorando os arquivos, detectando as mudanças  e vai compilar 
+automaticamente. Ou seja vai gerar .js automaticamente sempre que houver uma mudança em .ts, 
+em qualquer pasta ou subpasta do projeto.
