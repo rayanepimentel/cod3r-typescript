@@ -177,3 +177,37 @@ let calculo: (numeroA: number, numeroB: number) => number
 calculo = multiplicar
 console.log(calculo(5,6))
 
+
+//objetos 
+//os atributos e os tipos são verificados
+
+let usuario = {
+    nome: 'João',
+    idade: 27
+}
+
+console.log(usuario)
+//usuario = {} //erro pq tá vazio
+
+/*usuario = {
+    name: 'Maria',
+    age: 5
+}*/
+
+//erro pq não respeitou o atributo nome e idade
+
+//definir explicidamente os tipos
+
+let user: {nome: string, idade: number} = {
+    nome: 'Maria',
+    idade: 5
+}
+
+console.log(user)
+
+user = {
+    idade: 27,
+    nome: 'João'
+}
+
+console.log(user)
