@@ -63,8 +63,8 @@ console.log(typeof myAge)
 
 
 //Ou seja para passarmos o tipo, declamos a variamos e passamo qual o tipo
-let myName : string
-let age : number
+let myName : string = 'João'
+let age : number = 5
 let hobbies : boolean
 
 
@@ -125,3 +125,44 @@ console.log(carro)
 carro = { marca: 'BMW', ano: 2019 }
 console.log(carro)
 //não gerou nenhum erro
+
+//funções
+
+function retornaMeuNome() {
+    return myName
+    //return age
+}
+
+console.log(retornaMeuNome())
+
+//e se eu quiser que essa função retorna uma srting
+
+function retornaMeuNome2() : string {
+    return myName
+    //return age
+}
+
+console.log(retornaMeuNome2())
+
+//quando o metodo não retorna nada
+function digaOi() {
+    console.log('Oi')
+}
+
+digaOi()
+
+//como ela não retorna nada podemos usar o tipo void (vazio)
+
+function digaOla(): void {
+    console.log('Olá')
+    //return age //erro pq ela não retorna nada
+}
+
+digaOla()
+
+function multiplicar(numA: number, numB: number): number {
+    return numA * numB
+}
+
+//console.log(multiplicar(2, 'Bia'))//NaN não retornou numero inválido
+console.log(multiplicar(4.7,9))

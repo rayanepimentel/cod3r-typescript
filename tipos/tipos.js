@@ -50,8 +50,8 @@ console.log(typeof myAge);
 myAge = true;
 console.log(typeof myAge);
 //Ou seja para passarmos o tipo, declamos a variamos e passamo qual o tipo
-var myName;
-var age;
+var myName = 'João';
+var age = 5;
 var hobbies;
 //array
 var myHobbies = ['Cozinhar', 'Dança']; //um array de string
@@ -97,3 +97,31 @@ console.log(carro);
 carro = { marca: 'BMW', ano: 2019 };
 console.log(carro);
 //não gerou nenhum erro
+//funções
+function retornaMeuNome() {
+    return myName;
+    //return age
+}
+console.log(retornaMeuNome());
+//e se eu quiser que essa função retorna uma srting
+function retornaMeuNome2() {
+    return myName;
+    //return age
+}
+console.log(retornaMeuNome2());
+//quando o metodo não retorna nada
+function digaOi() {
+    console.log('Oi');
+}
+digaOi();
+//como ela não retorna nada podemos usar o tipo void (vazio)
+function digaOla() {
+    console.log('Olá');
+    //return age //erro pq ela não retorna nada
+}
+digaOla();
+function multiplicar(numA, numB) {
+    return numA * numB;
+}
+//console.log(multiplicar(2, 'Bia'))//NaN não retornou numero inválido
+console.log(multiplicar(4.7, 9));
