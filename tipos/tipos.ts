@@ -316,3 +316,44 @@ const produto = {
 }
 
 produto.validarProduto()
+
+
+//Null
+
+let altura = 12
+//altura = null //erro
+
+let alturaOpcional: null | number = 12
+alturaOpcional = null
+
+type Contato = {
+    nome: string,
+    tel1: string,
+    tel2: string | null
+}
+
+const contato1: Contato = {
+    nome: 'Fulano',
+    tel1: '123456789',
+    tel2: null
+}
+
+console.log(contato1)
+
+//null tbm é um tipo, não muito util para utilizar sozinho
+
+//se você atribuir uma variavel ao valor null, o tipo será any
+let podeSerNulo = null
+podeSerNulo = 12
+podeSerNulo = 'abc'
+
+//se você passar a variavel por tipo null, ele não aceitaria mais nenhum tipo, só null
+let podeSerNulo2: null = null
+//podeSerNulo2 = 12
+//podeSerNulo2 = 'abc'
+
+//ele sozinho não faz sentido
+//mas ele é util quando você tem outros tipos, valores..
+//ou seja quando vc quer um valor opcional
+
+

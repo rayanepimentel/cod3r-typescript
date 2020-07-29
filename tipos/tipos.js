@@ -236,3 +236,26 @@ var produto = {
     }
 };
 produto.validarProduto();
+//Null
+var altura = 12;
+//altura = null //erro
+var alturaOpcional = 12;
+alturaOpcional = null;
+var contato1 = {
+    nome: 'Fulano',
+    tel1: '123456789',
+    tel2: null
+};
+console.log(contato1);
+//null tbm é um tipo, não muito util para utilizar sozinho
+//se você atribuir uma variavel ao valor null, o tipo será any
+var podeSerNulo = null;
+podeSerNulo = 12;
+podeSerNulo = 'abc';
+//se você passar a variavel por tipo null, ele não aceitaria mais nenhum tipo, só null
+var podeSerNulo2 = null;
+//podeSerNulo2 = 12
+//podeSerNulo2 = 'abc'
+//ele sozinho não faz sentido
+//mas ele é util quando você tem outros tipos, valores..
+//ou seja quando vc quer um valor opcional
