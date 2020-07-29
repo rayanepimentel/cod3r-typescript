@@ -259,3 +259,23 @@ let funcionario2: Funcionario = {
         }
     }
 }
+
+//Union Types
+//por exemplo, vc tme uma nota e vc aceita receber tanto em number e string
+let nota = 10
+console.log(`Minha nota é ${nota}!`)
+//nota = '11' //deu erro
+//nesse caso umas das possibilidades é colocar nota:any
+//mas nesse caso ele vai aceitar tudo, inclusive:
+//nota = true // mas esse é um cenário não desejado para essa situação
+//o que eu realmente quero é receber, ter a possibilidade de number e string
+//no caso, eu posso usar Unin types nota: number | string
+
+let notas: number | string = 12
+console.log(`Minha nota é ${notas}!`)
+notas = '13'
+console.log(`Minha nota é ${notas}!`)
+
+//usando union types temos a possobilidade de termos mais de um tipo de usarmos na variavel
+//sem perder a checagem dos tipos
+
