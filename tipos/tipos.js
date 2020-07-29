@@ -203,3 +203,12 @@ notas = '13';
 console.log("Minha nota \u00E9 " + notas + "!");
 //usando union types temos a possobilidade de termos mais de um tipo de usarmos na variavel
 //sem perder a checagem dos tipos
+//checando tipos manualmente no mundo JS
+var valor = 30;
+//por inferencia o copilador .ts já associou valor a number
+if (typeof valor === 'number') {
+    console.log('É number');
+}
+else {
+    console.log("\u00C9 do tipo " + typeof valor);
+}
