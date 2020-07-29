@@ -64,7 +64,8 @@ var qualquerCoisa;
 qualquerCoisa = 12;
 qualquerCoisa = 'abc';
 //checagem de null e parametros
-function saudar(isManha, horas) {
+function saudar(isManha) {
+    //let a = 1
     var saudacao;
     if (isManha) {
         saudacao = 'Bom dia!';
@@ -78,4 +79,11 @@ function saudar(isManha, horas) {
 //para corrigir descomente "strictNullChecks": false,   
 //outro caso é paramentro não usado
 // "noUnusedParameters": true
+//ele mostrará um erro em horas, pq é declado mas nunca usado
+//variaveis locais criada na função e nunca usadas
+//"noUnusedLocals": true,  
+//let a = 1 a foi declado mas nunca usado.
+//diretorio de saída
+//outDir vc pode redirecionar todos os seus arq compilados para uma pasta especifica
+//ex: outDir: './build'
 //# sourceMappingURL=complicador.js.map

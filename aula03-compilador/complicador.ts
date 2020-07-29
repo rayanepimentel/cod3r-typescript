@@ -86,8 +86,8 @@ qualquerCoisa = 'abc'
 
 //checagem de null e parametros
 
-function saudar(isManha: boolean, horas: number): string {
-    let a = 1
+function saudar(isManha: boolean): string {
+    //let a = 1
     let saudacao: string
     if(isManha) {
         saudacao = 'Bom dia!'
@@ -108,3 +108,8 @@ function saudar(isManha: boolean, horas: number): string {
 //variaveis locais criada na função e nunca usadas
 //"noUnusedLocals": true,  
 //let a = 1 a foi declado mas nunca usado.
+
+
+//diretorio de saída
+//outDir vc pode redirecionar todos os seus arq compilados para uma pasta especifica
+//ex: outDir: './build'
