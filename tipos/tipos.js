@@ -259,3 +259,17 @@ var podeSerNulo2 = null;
 //ele sozinho não faz sentido
 //mas ele é util quando você tem outros tipos, valores..
 //ou seja quando vc quer um valor opcional
+//desafio aplicar tipos
+var contaBancaria = {
+    saldo: 3456,
+    depositar: function (valor) {
+        this.saldo += valor;
+    }
+};
+var correntista = {
+    nome: 'Ana Silva',
+    contaBancaria: contaBancaria,
+    contatos: ['34567890', '987654321']
+};
+correntista.contaBancaria.depositar(3000);
+console.log(correntista);

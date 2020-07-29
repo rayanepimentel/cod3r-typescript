@@ -357,3 +357,21 @@ let podeSerNulo2: null = null
 //ou seja quando vc quer um valor opcional
 
 
+//desafio aplicar tipos
+
+let contaBancaria = {
+    saldo: 3456,
+    depositar(valor) {
+        this.saldo += valor
+    }
+}
+
+let correntista = {
+    nome: 'Ana Silva',
+    contaBancaria: contaBancaria,
+    contatos: ['34567890', '987654321']
+}
+
+correntista.contaBancaria.depositar(3000)
+console.log(correntista)
+
