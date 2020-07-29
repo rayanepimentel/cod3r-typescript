@@ -254,12 +254,6 @@ podeSerNulo = 12;
 podeSerNulo = 'abc';
 //se você passar a variavel por tipo null, ele não aceitaria mais nenhum tipo, só null
 var podeSerNulo2 = null;
-//podeSerNulo2 = 12
-//podeSerNulo2 = 'abc'
-//ele sozinho não faz sentido
-//mas ele é util quando você tem outros tipos, valores..
-//ou seja quando vc quer um valor opcional
-//desafio aplicar tipos
 var contaBancaria = {
     saldo: 3456,
     depositar: function (valor) {

@@ -359,11 +359,22 @@ let podeSerNulo2: null = null
 
 //desafio aplicar tipos
 
-let contaBancaria = {
+type ContaBancaria = {
+    saldo: number,
+    depositar: (valor: number) => void
+}
+
+let contaBancaria: ContaBancaria = {
     saldo: 3456,
-    depositar(valor) {
+    depositar(valor: number) {
         this.saldo += valor
     }
+}
+
+type Correntista = {
+    nome: string,
+    contaBancaria: ContaBancaria,
+    contatos: string[]
 }
 
 let correntista = {
