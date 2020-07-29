@@ -81,3 +81,20 @@ function soma(a: any, b: any){
 let qualquerCoisa
 qualquerCoisa = 12
 qualquerCoisa = 'abc'
+
+
+
+//checagem de null e parametros
+
+function saudar(isManha: boolean): string {
+    let saudacao: string
+    if(isManha) {
+        saudacao = 'Bom dia!'
+    } else {
+        saudacao =  'Boa ....'
+    }
+    return saudacao
+    //erro saudação estar sendo usada antes de ser atribuida
+}
+
+//para corrigir descomente "strictNullChecks": false,   

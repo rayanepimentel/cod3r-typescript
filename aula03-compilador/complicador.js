@@ -63,4 +63,17 @@ function soma(a, b) {
 var qualquerCoisa;
 qualquerCoisa = 12;
 qualquerCoisa = 'abc';
+//checagem de null e parametros
+function saudar(isManha) {
+    var saudacao;
+    if (isManha) {
+        saudacao = 'Bom dia!';
+    }
+    else {
+        saudacao = 'Boa ....';
+    }
+    return saudacao;
+    //erro saudação estar sendo usada antes de ser atribuida
+}
+//para corrigir descomente "strictNullChecks": false,   
 //# sourceMappingURL=complicador.js.map
