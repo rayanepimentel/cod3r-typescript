@@ -31,3 +31,15 @@ console.log("Canal = " + canal);
 //a possilibidade de usar nome, é não declarar como variável
 nome = 'Pedro';
 console.log("Nome = " + nome);
+//Alterando o target
+//target informa a versão do js. quando copilado.
+//por padrão ele vem es5
+//"target": "es5", 
+//vamos atualizar para es6
+//diferença:
+//por exemplo lá no tipo.ts let nome
+// no tipo.js tá var nome
+//tá var pq na versão es5 não tinha let
+//alterando para  "target": "es6", 
+//podemos ver o que era var, passar a ser let
+//mas pode deixar na versão padrão
