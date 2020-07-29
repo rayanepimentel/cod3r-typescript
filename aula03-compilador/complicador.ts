@@ -113,3 +113,7 @@ function saudar(isManha: boolean): string {
 //diretorio de saída
 //outDir vc pode redirecionar todos os seus arq compilados para uma pasta especifica
 //ex: outDir: './build'
+
+
+//arquivo de saída
+//outFile

@@ -86,4 +86,6 @@ function saudar(isManha) {
 //diretorio de saída
 //outDir vc pode redirecionar todos os seus arq compilados para uma pasta especifica
 //ex: outDir: './build'
+//arquivo de saída
+//outFile
 //# sourceMappingURL=complicador.js.map
