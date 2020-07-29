@@ -66,3 +66,18 @@ console.log(`Nome = ${nome}`)
 //com souceMap gerado, no console entre em Sources e terá as pastas do projeto
 //entre no compilador.ts 
 //vc terá todo o código do .ts
+
+
+//Any implicito 
+
+//vai gerar problema
+function soma(a: any, b: any){
+    return a + b
+}
+
+//no config ts, descomente "noImplicitAny": true,
+
+//não vai gerar problema
+let qualquerCoisa
+qualquerCoisa = 12
+qualquerCoisa = 'abc'
