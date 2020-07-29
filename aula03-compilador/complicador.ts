@@ -86,7 +86,8 @@ qualquerCoisa = 'abc'
 
 //checagem de null e parametros
 
-function saudar(isManha: boolean): string {
+function saudar(isManha: boolean, horas: number): string {
+    let a = 1
     let saudacao: string
     if(isManha) {
         saudacao = 'Bom dia!'
@@ -98,3 +99,12 @@ function saudar(isManha: boolean): string {
 }
 
 //para corrigir descomente "strictNullChecks": false,   
+
+//outro caso é paramentro não usado
+// "noUnusedParameters": true
+//ele mostrará um erro em horas, pq é declado mas nunca usado
+
+
+//variaveis locais criada na função e nunca usadas
+//"noUnusedLocals": true,  
+//let a = 1 a foi declado mas nunca usado.

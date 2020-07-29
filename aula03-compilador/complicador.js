@@ -64,7 +64,7 @@ var qualquerCoisa;
 qualquerCoisa = 12;
 qualquerCoisa = 'abc';
 //checagem de null e parametros
-function saudar(isManha) {
+function saudar(isManha, horas) {
     var saudacao;
     if (isManha) {
         saudacao = 'Bom dia!';
@@ -76,4 +76,6 @@ function saudar(isManha) {
     //erro saudação estar sendo usada antes de ser atribuida
 }
 //para corrigir descomente "strictNullChecks": false,   
+//outro caso é paramentro não usado
+// "noUnusedParameters": true
 //# sourceMappingURL=complicador.js.map
