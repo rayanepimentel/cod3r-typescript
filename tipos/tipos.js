@@ -212,3 +212,27 @@ if (typeof valor === 'number') {
 else {
     console.log("\u00C9 do tipo " + typeof valor);
 }
+//tipo Never
+//tipo de retorno
+//quando a função não retorna nada utilizando o void
+//Never: nunca vai retornar
+//ou ela vai fica rodando infinito dentro dela
+//ou quando ela retorna com erro
+//ou seja: ou ela vai ficar com erro ou em algum tipo de loop e nunca vai retornar a função
+function falha(msg) {
+    // while(true) {}
+    throw new Error(msg);
+}
+var produto = {
+    nome: 'Sabão',
+    preco: 4,
+    validarProduto: function () {
+        if (!this.nome || this.nome.trim().length == 0) {
+            falha('Precisa ter um nome');
+        }
+        if (this.preco <= 0) {
+            falha('Preço é inválido!');
+        }
+    }
+};
+produto.validarProduto();
