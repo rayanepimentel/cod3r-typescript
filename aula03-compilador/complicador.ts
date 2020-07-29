@@ -53,3 +53,16 @@ console.log(`Nome = ${nome}`)
 //podemos ver o que era var, passar a ser let
 
 //mas pode deixar na versão padrão
+
+
+//alterar sourceMap
+//objetivo: habilitado o console, vc terá acesso ao código original que gerou o js, que tá cendo interpretado pela página
+//quando vc gera um javascript de produção, ele é todo modificado para ficar o menor possível
+//para que vc tenha uma transferencia de arq rápido para web
+//e é muito dificil vc olhar, como ele foi mimificado, vai ficar muito dificil para interpretar e saber exatamente que codigo é aquele
+//o arquivo .map ele vai fazer o mapeamento entre o arq qye estar sendo excutado no browser e o arq que foi usado para fazer aquele codigo
+//ou seja com souceMap temos acesso ao arquivo .ts
+
+//com souceMap gerado, no console entre em Sources e terá as pastas do projeto
+//entre no compilador.ts 
+//vc terá todo o código do .ts
