@@ -71,4 +71,23 @@ falarCom('João');
 //mas se vc quiser atribuir pessoa : string, não funciona, é preciso colocar entre ()
 //uso do this
 //ele pode variar quando vc tem uma function
+// function normalComThis() {
+//     console.log(this)
+// }
+// normalComThis() //undefined
+// const normalComThisEspecial = normalComThis.bind(2)
+//o que eu passar como param. dentro de bind(), sera usado dentro de normalComThis, como se fosse this
+//salvando com .bind(2) e chamando normalComThisEspecial
+// normalComThisEspecial() // retorna 2
+// console.log(this)
+// const arrowComThis = () => console.log(this)
+// arrowComThis() //this vai ser window
+//como faz para descobrir qual this será usado dentro arrow function?
+//simples, quem é o this na linha anterior no momento que a function foi definida
+//quem é o this antes de const arrowComThis...
+//coloque console.log(this) antes da função
+//é o mesmo this da função
+// const arrowComThisEspecial = arrowComThis.bind({nome: 'Ana'})
+// arrowComThisEspecial()
+//sera o mesmo this Window
 //# sourceMappingURL=ecmascript.js.map
