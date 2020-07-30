@@ -178,4 +178,17 @@ const precoItem = items.preco;
 const { nome: n, preco } = items;
 console.log(n, preco);
 //você pode colocar alias, por exemplo no nome, o alias é n
+//template string
+//``
+const usuarioID = 'Suporte';
+const notificacaos = '19';
+const boasVindas = 'Boas vindas ' + usuarioID +
+    ' Notificações: ' + notificacaos;
+console.log(boasVindas);
+const boasVindas2 = `
+Boas vindas ${usuarioID} 
+Notificações: ${parseInt(notificacaos) > 9 ? '+9' : notificacaos}
+`;
+console.log(boasVindas2);
+console.log(`${1 + 2}`);
 //# sourceMappingURL=ecmascript.js.map
