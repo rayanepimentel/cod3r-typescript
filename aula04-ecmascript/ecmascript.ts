@@ -207,3 +207,19 @@ function tuplaParam2(...params:[number, string, boolean]) {
 }
 
 tuplaParam2(...tupla)//usando spread, já que ele espera receber param quebrados
+
+
+//operador destructuring(array)
+//pegar dados dentro de uma estrutura e expor de uma forma mais simples
+//sem precisar pegar cada um dos dados e atribuir a eles a uma const
+//ou seja vc pode fazer isso em uma única operação
+
+const caracteristicas = ['Motor zzz', 2020]
+//manualmente
+// const motor = caracteristicas[0]
+// const ano = caracteristicas[1]
+
+//usando destructuring
+const [motor, ano] = caracteristicas
+console.log(motor, ano)
+//o objetivo pe deixar o código mais prático, faz as coisas de uma forma mais rápida
