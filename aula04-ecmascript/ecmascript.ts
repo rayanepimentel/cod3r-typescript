@@ -120,3 +120,34 @@ falarCom('João')
 // arrowComThisEspecial()
 
 //sera o mesmo this Window
+
+
+
+
+//paramentro padrão:
+function contagem(inicio: number = 3): void {
+    console.log(inicio)
+    while(inicio > 0){
+        inicio--
+        console.log(inicio)
+    }
+    console.log('Fim')
+}
+
+contagem()
+contagem(5)
+
+function contagem2(inicio: number = 5,
+    fim: number = inicio - 5): void {
+    console.log(inicio)
+    while(inicio > fim){
+        inicio--
+        console.log(inicio)
+    }
+    console.log('Fim')
+}
+
+contagem2()
+contagem2(3)
+
+

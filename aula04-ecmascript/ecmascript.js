@@ -90,4 +90,25 @@ falarCom('João');
 // const arrowComThisEspecial = arrowComThis.bind({nome: 'Ana'})
 // arrowComThisEspecial()
 //sera o mesmo this Window
+//paramentro padrão:
+function contagem(inicio = 3) {
+    console.log(inicio);
+    while (inicio > 0) {
+        inicio--;
+        console.log(inicio);
+    }
+    console.log('Fim');
+}
+contagem();
+contagem(5);
+function contagem2(inicio = 5, fim = inicio - 5) {
+    console.log(inicio);
+    while (inicio > fim) {
+        inicio--;
+        console.log(inicio);
+    }
+    console.log('Fim');
+}
+contagem2();
+contagem2(3);
 //# sourceMappingURL=ecmascript.js.map
