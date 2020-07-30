@@ -2,8 +2,8 @@
 //mesmo quando existe um erro no ts, o js é gerado
 //como evitar isso?
 //dento do arquivo de configuração conseguimos barrar a compilação quando tiver um erro
-var canal = 'Gaveta';
-var inscritos = 610234;
+let canal = 'Gaveta';
+let inscritos = 610234;
 //para gerar erro
 //canal = inscritos 
 console.log(canal);
@@ -16,7 +16,7 @@ console.log(canal);
 //"noEmitOnError": true,
 //para ele não emitir quando tiver um erro
 //se você apagar o compilador.js ele vai mostrar o erro na pagina
-console.log("Canal = " + canal);
+console.log(`Canal = ${canal}`);
 //ele exibi o erro e não deixa compilar
 //ao comentar a linha 9 irá aparecer Canal = Gaveta
 //produzindo outro erro, apague o compilador.js
@@ -30,7 +30,7 @@ console.log("Canal = " + canal);
 //no mesmo contexto
 //a possilibidade de usar nome, é não declarar como variável
 nome = 'Pedro';
-console.log("Nome = " + nome);
+console.log(`Nome = ${nome}`);
 //Alterando o target
 //target informa a versão do js. quando copilado.
 //por padrão ele vem es5
@@ -60,13 +60,13 @@ function soma(a, b) {
 }
 //no config ts, descomente "noImplicitAny": true,
 //não vai gerar problema
-var qualquerCoisa;
+let qualquerCoisa;
 qualquerCoisa = 12;
 qualquerCoisa = 'abc';
 //checagem de null e parametros
 function saudar(isManha) {
     //let a = 1
-    var saudacao;
+    let saudacao;
     if (isManha) {
         saudacao = 'Bom dia!';
     }
