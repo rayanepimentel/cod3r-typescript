@@ -122,4 +122,31 @@ const turmaA = ['João', 'Maria', 'Fernanda'];
 const turmaB = ['Fernando', 'Miguel', 'Lorena', ...turmaA];
 console.log(turmaB);
 //nesse caso usamos rest para juntar todos os elementos de A em B
+function retornaArray(arg1, arg2) {
+    return [arg1, arg2];
+}
+const numeros = retornaArray(1, 2); // e se eu quiser passar mais números?
+//no caso usaremos o rest, ele vai pegar varios para. e vai jogar tudo no array
+console.log(numeros);
+function retornaArray2(...args) {
+    return args;
+}
+const numeros2 = retornaArray2(1, 2, 20, 80);
+console.log(numeros2);
+//esse ...args faz o agrupamento, o rest
+console.log(retornaArray2(...numbers, ...retornaArray(1, 2)));
+//aqui estamos usando tando o spread para espalhar os numeros e passar cada um pros param. do retonnaArray2
+//como estamos usando o rest da própria função retornaArray2
+//vc pode misturar mais de um paramento se o ultimo foi rest
+//contexto tupla
+//rest e spread (tupla)
+const tupla = [5, 'abc', false];
+function tuplaParam(a, b, c) {
+    console.log(`1) ${a} ${b} ${c}`);
+}
+tuplaParam(...tupla); //usando spread
+function tuplaParam2(...params) {
+    console.log(`2) ${params[0]} ${params[1]} ${params[2]}`);
+}
+tuplaParam2(...tupla); //usando spread, já que ele espera receber param quebrados
 //# sourceMappingURL=ecmascript.js.map
