@@ -45,4 +45,30 @@ console.log(cpf);
 //let e const
 //tanto let como const tem escopo de bloco
 //global, função e bloco
+//Arrow Function
+//função anonima, não tem como chama-la depois
+//vc pode pegar um function anonima e atribuir uma variavel ou criar uma função com nome
+const somar = function (n1, n2) {
+    return n1 + n2;
+};
+console.log(somar(2, 2));
+//alem disso podemos criar uma arrow function
+//é sempre anonima
+const subtrair = (n1, n2) => n1 - n2;
+console.log(subtrair(10, 2));
+//tbm pode colocar que o retorno será : number => n1 - n2
+//nesse caso não precisou colocar return
+//sintaxe reduzida
+//this
+//function sem parametro
+const saudacao = () => console.log('Olá');
+saudacao();
+//com tem 1 parametro
+const falarCom = (pessoa) => console.log('Olá ' + pessoa);
+falarCom('João');
+//retorna Olá João, mas pessoa fica com erro.
+//como é 1 paramentro não precisa colocar entre ()
+//mas se vc quiser atribuir pessoa : string, não funciona, é preciso colocar entre ()
+//uso do this
+//ele pode variar quando vc tem uma function
 //# sourceMappingURL=ecmascript.js.map
