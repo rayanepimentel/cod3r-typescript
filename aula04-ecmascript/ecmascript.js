@@ -161,4 +161,21 @@ const caracteristicas = ['Motor zzz', 2020];
 const [motor, ano] = caracteristicas;
 console.log(motor, ano);
 //o objetivo pe deixar o código mais prático, faz as coisas de uma forma mais rápida
+//vc pode fazer assim:
+const [cor, numero] = ['azul', 5];
+//operador destructuring [cor, numero]             
+//array ['azul', 5]
+console.log(cor, numero);
+//Destructuring(objeto)
+const items = {
+    nome: 'SSD 4558',
+    preco: 200
+};
+//manualmente
+const nomeItem = items.nome;
+const precoItem = items.preco;
+//Destructuring
+const { nome: n, preco } = items;
+console.log(n, preco);
+//você pode colocar alias, por exemplo no nome, o alias é n
 //# sourceMappingURL=ecmascript.js.map
