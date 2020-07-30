@@ -151,3 +151,21 @@ contagem2()
 contagem2(3)
 
 
+//Operador Spread e Rest
+//spread ... : é espalhar. Quando vc pega, por ex um array e espalha esse array com param de uma function
+//Rest... : quando vc tem um conjunto de param. e que juntar esses param em um array
+
+const numbers = [1, 10, 99, -5, 200]
+console.log(Math.max(...numbers))
+//ou seja ao usar ... ele vai espalhar, vai pegar cada um dos elementos e passar esses elementos como param para função Max
+//nesse caso usamos o spread, pq ele vai espalhar cada elemento
+
+
+const turmaA: string[] = ['João', 'Maria', 'Fernanda']
+const turmaB: string[] = 
+    ['Fernando', 'Miguel', 'Lorena', ...turmaA]
+
+console.log(turmaB)
+//nesse caso usamos rest para juntar todos os elementos de A em B
+
+
