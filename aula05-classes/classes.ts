@@ -57,3 +57,22 @@ const casamento2 = new DataEsperta// posso imitir os "()"
 casamento2.ano = 2017
 console.log(casamento2)
 
+//desafio Classe produto
+//Aributos: nome, preco e desconto
+//criar o constructor
+//obs1: Desconto é opcional (valor padrão)
+//obs2: criar dois produtos passando dois e três params
+
+
+class Produto {
+    constructor(public nome: string, public preco: number, 
+        public desconto: number = 0) {
+
+    }
+}
+
+const telefone = new Produto('Xiaomi', 1200)
+console.log(telefone)
+
+const computador = new Produto('Dell', 2500, 0.1)
+console.log(computador)
