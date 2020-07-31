@@ -22,4 +22,19 @@ console.log(aniversario);
 const casamento = new Data; // posso imitir os "()"
 casamento.ano = 2017;
 console.log(casamento);
+class DataEsperta {
+    constructor(dia = 1, mes = 1, ano = 1970) {
+        this.dia = dia;
+        this.mes = mes;
+        this.ano = ano;
+    }
+}
+const aniversario2 = new DataEsperta(3, 11, 1991);
+console.log(aniversario2.dia);
+aniversario2.dia = 4;
+console.log(aniversario2.dia);
+console.log(aniversario2);
+const casamento2 = new DataEsperta; // posso imitir os "()"
+casamento2.ano = 2017;
+console.log(casamento2);
 //# sourceMappingURL=classes.js.map

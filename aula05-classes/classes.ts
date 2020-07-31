@@ -1,7 +1,8 @@
 //criar uma classe simples
 class Data {
+    //público por padrão (os três estão public, mesmo sem a palavra reservada)
     dia: number
-    mes: number
+    public mes: number
     ano: number
 
     //constrctor(e vc vai receber como param aquilo que vc wuer usar para contruir o obj)
@@ -29,3 +30,30 @@ console.log(aniversario)
 const casamento = new Data// posso imitir os "()"
 casamento.ano = 2017
 console.log(casamento)
+
+
+
+
+
+
+class DataEsperta {
+    constructor(public dia: number = 1, public mes: number = 1, 
+        public ano: number = 1970) {
+    
+    }
+}
+
+
+
+const aniversario2 = new DataEsperta(3, 11, 1991)
+console.log(aniversario2.dia)
+aniversario2.dia = 4
+console.log(aniversario2.dia)
+console.log(aniversario2)
+
+
+
+const casamento2 = new DataEsperta// posso imitir os "()"
+casamento2.ano = 2017
+console.log(casamento2)
+
