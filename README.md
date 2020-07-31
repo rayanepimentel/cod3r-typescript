@@ -1,6 +1,6 @@
 
 <h1>Curso TypesScript</h1>
-<p>Link: <a href="https://www.udemy.com/course/typescript-pt/" target="_blank">Entendendo TypesScript | Udemy</a></p>
+<p>Link do curso: <a href="https://www.udemy.com/course/typescript-pt/" target="_blank">Entendendo TypesScript | Udemy</a></p>
 
 <h2>Módulos</h2>
 <p>Os módulos estão dividos em pastas por <i>Aulas</i></p>
@@ -14,6 +14,6 @@
   <li>Módulos e Namespaces</li>
   <li>Interfaces</li>
   <li>Generics</li>
-  </li>Decorators</li>
+  <li>Decorators</li>
   <li>Usando Bibliotecas JS em Typescript</li>
 </ul>
