@@ -233,3 +233,20 @@ console.log(pessoa1.idade) //get
 
 pessoa1.idade = -3 
 console.log(pessoa1)
+
+//membros estáticos
+//atributo ou métodos pertencem a class e não a instancia
+
+//atributos e metodos estaticos
+
+class Matematica {
+    static PI: number = 3.1416
+
+    static areCirc(raio: number): number {
+        return this.PI * raio * raio
+    }
+}
+
+//const m1 = new Matematica()
+//m1.PI = 4.2
+console.log(Matematica.areCirc(4))
