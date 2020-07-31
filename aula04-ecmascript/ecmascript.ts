@@ -303,3 +303,101 @@ console.log(primeiroNome, experiencia)
 
 
 */
+
+//promises
+
+//assicronismo em JS, geralmente em callback
+
+function esperar3() {
+    setTimeout(() => {
+        console.log('aqui 3s')
+    })
+}
+esperar3()
+//e se eu quiser retornar esse valor ('aqui 3s) ?
+//umas das possibilidades é receber uma função callback, uma function com param
+//e nesse function 3s depois vc vai chama-la passando o dado que vc quer retornar(3s)
+//e como vai ser a assinatura? essa função vai receber um param, no caso do tipo string
+//e vai retornar void
+//ou seja:
+function esperar3s(callback: (dado: string) => void){
+    setTimeout(() => {
+        callback('3s')
+    }, 3000)
+}
+
+// esperar3s()
+// const resultado = esperar3s()
+
+//e aqui eu crio uma função do esperar3s
+//e a função foi chamanda depois de algum momento (3s)
+esperar3s(function(resultado: string) {
+    console.log(resultado)
+})
+
+
+//mas poderiamos trabalhar dessa mesma forma com promise
+//nesse caso não teria o callback como da forma anterior
+//e vou retornar uma new Promise
+//e essa promise(vai receber callback) (resolve, reject)
+//e dentro dessa promise eu chamo o resolve ou reject, dependendo da situação
+//eu chamo o resolve, passa o dado que eu quiser passar
+//em resolve por enquanto podemos colocar o tipo any
+//e podemos retirar o reject, já que nessa função só queremos o resolve
+//provavelmente reclame em Promise, passe para es6
+function esperar3sPromise() {
+    return new Promise((resolve: any) => {
+        setTimeout(() => {
+            resolve('3s promise')
+        }, 3000)
+    })   
+}
+//nesse caso temos a promise, estou retornando uma promise
+//e essa promise recebe uma função
+//que é uma função chamada resolve
+//quando eu quiser realmente retornar uma dado
+//chamamos o resolve
+
+//chamamos a function promise
+//chamo o .then()
+//e no then, eu vou receber o dado que eu quero fazer algo com ele
+//no caso imprimir no console
+esperar3sPromise().then(dado => console.log(dado))
+
+//essa função retornou uma promise
+//a promise recebe como para. duas funções
+//no caso trabalhamos só com uma, resolve
+//e quand eu quero finalizar, eu chamo a função resolve
+//passando os dados
+//e essa dado será exatamente o dadod que será recebido na função .then()
+//e a função .then() só será chamada quando vc chamar o resolve
+//que no caso é 3s
+
+
+//usando api swapi
+//usando fetch, passando url da api
+//then vai receber uma resposta
+//ele trouxe uma resposta, json
+//para pegar o json, pego a res.json()
+//ele vai retornar uma outra promise
+//outr then, que irá receber os dados 
+//imprimindo os dados, nesse caso eu peguei "Luke Skywalker"
+//e os filmes, os filmes já são outras urls
+//no caso vamos pegar o personagem
+//do personagem vamos pegar os filmes
+//pegar o json dos filmes desse personagem
+//e depois pegar 1 filme
+
+fetch('https://swapi.dev/api/people/1')
+    //.then(res => console.log(res))
+    .then(res => res.json())
+    //.then(dados => console.log(dados))
+    .then(person => person.films)
+    .then(films => fetch(films[0]))
+    .then(resFilm => resFilm.json())
+    .then(filme => console.log(filme.title))
+    .catch(err => console.log(`catch!!! ${err}`))//caso não exista e nesse caso seria reject
+    
+
+
+
