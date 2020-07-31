@@ -85,7 +85,7 @@ class Carro {
         }
         return this.velocidadeAtual;
     }
-    acelar() {
+    acelerar() {
         return this.alterarVelocidade(5);
     }
     frear() {
@@ -94,8 +94,46 @@ class Carro {
 }
 const carro1 = new Carro('Ford', 'Ka', 185);
 //console.log(carro1.acelar())
-Array(10).fill(0).forEach(() => carro1.acelar());
-console.log(carro1.acelar());
+Array(10).fill(0).forEach(() => carro1.acelerar());
+console.log(carro1.acelerar());
 Array(5).fill(0).forEach(() => carro1.frear());
 console.log(carro1.frear());
+//Herança
+//capacidade de reusar código
+//composição é mais frquente que herança
+//composição = carro tem 01 motor/ um carro tem algumas portas
+//composiçao = xxx tem um yyy
+//herança = xxx é um yyy
+//herança = Ferrari é um carro
+//class vai herdar os comportamentos da class carro
+//extends
+class Ferrari extends Carro {
+    acelarar() {
+        return this.alterarVelocidade(20);
+    }
+    frear() {
+        return this.alterarVelocidade(-15);
+    }
+}
+const f40 = new Ferrari('Ferrari', 'F40', 424);
+//no momento que eu instancie a Ferrari, posso usar começar a usar tanto os comportamentos como os atributos
+console.log(`${f40.marca} ${f40.modelo}`);
+//chamar o metodo acelera e frear
+console.log(f40.acelerar());
+console.log(f40.frear());
+console.log(f40.acelerar());
+console.log(f40.acelerar());
+//mas a ferrari não acelera ou freia com carro normal
+//nesse caso podemos sobrescrever a acelerar e frear
+//e acelerar colocamos 20 e frear -15
+//mas nesse caso deu um problema return this.alterarVelocidade(5)
+//pq por padrão tantos os métodos e atributos privados não são transmitidos por herença
+//podemos ter acesso a esses métodos, mas não altera-los
+//pqo alterarVelocidade é private
+//nesse caso é preciso trocar o private por protected em alterarVelocidade
+//com protected será transmitido por herança 
+//resumindo
+//public = visivel para todo mundo
+//private = fica visivel apenas dentro da class
+//proteced = além de visivel dentro da class tbm é transmitido por herança
 //# sourceMappingURL=classes.js.map
