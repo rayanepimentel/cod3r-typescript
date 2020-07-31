@@ -65,4 +65,37 @@ const telefone = new Produto('Xiaomi', 1200);
 console.log(telefone.resumo());
 const computador = new Produto('Dell', 2500, 0.9);
 console.log(computador.resumo());
+//modificadores de acesso
+class Carro {
+    constructor(marca, modelo, velocidadeMaxima = 200) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.velocidadeMaxima = velocidadeMaxima;
+        this.velocidadeAtual = 0;
+    }
+    alterarVelocidade(delta) {
+        const novavelocidade = this.velocidadeAtual + delta;
+        const velocidadeValida = novavelocidade >=
+            0 && novavelocidade <= this.velocidadeMaxima;
+        if (velocidadeValida) {
+            this.velocidadeAtual = novavelocidade;
+        }
+        else {
+            this.velocidadeAtual = delta > 0 ? this.velocidadeMaxima : 0;
+        }
+        return this.velocidadeAtual;
+    }
+    acelar() {
+        return this.alterarVelocidade(5);
+    }
+    frear() {
+        return this.alterarVelocidade(-5);
+    }
+}
+const carro1 = new Carro('Ford', 'Ka', 185);
+//console.log(carro1.acelar())
+Array(10).fill(0).forEach(() => carro1.acelar());
+console.log(carro1.acelar());
+Array(5).fill(0).forEach(() => carro1.frear());
+console.log(carro1.frear());
 //# sourceMappingURL=classes.js.map

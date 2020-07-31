@@ -93,4 +93,43 @@ const computador = new Produto('Dell', 2500, 0.9)
 console.log(computador.resumo())
 
 
+//modificadores de acesso
+class Carro {
+    private velocidadeAtual: number = 0
 
+    constructor(public marca: string, public modelo: string,
+        private velocidadeMaxima: number = 200){
+
+    }
+
+    private alterarVelocidade(delta: number): number {
+        const novavelocidade = this.velocidadeAtual + delta
+        const velocidadeValida = novavelocidade >= 
+            0 && novavelocidade <= this.velocidadeMaxima
+
+            if(velocidadeValida) {
+                this.velocidadeAtual = novavelocidade
+            } else {
+                this.velocidadeAtual =  delta > 0 ? this.velocidadeMaxima : 0
+            }
+
+            return this.velocidadeAtual
+    }
+
+    public acelar(): number {
+        return this.alterarVelocidade(5)
+    }
+
+    public frear(): number {
+        return this.alterarVelocidade(-5)
+    }
+    
+}
+
+const carro1 = new Carro('Ford', 'Ka', 185)
+//console.log(carro1.acelar())
+Array(10).fill(0).forEach(() => carro1.acelar())
+console.log(carro1.acelar())
+
+Array(5).fill(0).forEach(() => carro1.frear())
+console.log(carro1.frear())
