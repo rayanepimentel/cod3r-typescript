@@ -182,3 +182,30 @@ console.log(f40.acelerar())
 //public = visivel para todo mundo
 //private = fica visivel apenas dentro da class
 //proteced = além de visivel dentro da class tbm é transmitido por herança
+
+
+//criando nova herança 
+//acrescentando um constructor já que a marca sempre será BMW
+//no constructor eu vou passar o modelo e a velocidademaxima
+//dentro do constructor eu preciso chamar o const. da classe pai
+//a chamada do super faz a invocação do constr. da class pai
+//e o const. da classe pai recebe 3 param.
+//e na chamada do super eu vou passar o que eu for usar do const, da class pai
+//vou passar a marca, que sempre será bmw e o modelo e velocidademaxima
+//
+class Bmw extends Carro {
+    constructor(modelo: string, velocidadeMaxima: number) {
+        super('BMW', modelo, velocidadeMaxima)
+    }
+
+    public acelarar(): number {
+        return this.alterarVelocidade(25)
+    }
+
+    public frear(): number {
+        return this.alterarVelocidade(-15)
+    }
+}
+
+const serie = new Bmw('s18', 324)
+console.log(`${serie.marca} ${serie.modelo}`)
