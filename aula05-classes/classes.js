@@ -48,16 +48,21 @@ class Produto {
         this.preco = preco;
         this.desconto = desconto;
     }
+    //desafio
+    //criar método precoComDesconto
+    //quais são os param e o retorno?
+    //alterar método resumo p/ mostrar o preço com desconto
+    precoComDesconto() {
+        return this.preco * (1 - this.desconto);
+    }
     resumo() {
         return `
-        ${this.nome} custa R$${this.preco} 
-        (${this.desconto * 100}% off)
+        ${this.nome} custa R$${this.precoComDesconto()} (${this.desconto * 100}% off)
         `;
     }
 }
 const telefone = new Produto('Xiaomi', 1200);
 console.log(telefone.resumo());
-const computador = new Produto('Dell', 2500, 0.1);
+const computador = new Produto('Dell', 2500, 0.9);
 console.log(computador.resumo());
-//desafio
 //# sourceMappingURL=classes.js.map
