@@ -69,10 +69,20 @@ class Produto {
         public desconto: number = 0) {
 
     }
+
+    public resumo(): string {
+        return `
+        ${this.nome} custa R$${this.preco} 
+        (${this.desconto *100}% off)
+        `
+    }
 }
 
 const telefone = new Produto('Xiaomi', 1200)
-console.log(telefone)
+console.log(telefone.resumo())
 
 const computador = new Produto('Dell', 2500, 0.1)
-console.log(computador)
+console.log(computador.resumo())
+
+//desafio
+

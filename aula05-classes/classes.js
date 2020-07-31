@@ -48,9 +48,16 @@ class Produto {
         this.preco = preco;
         this.desconto = desconto;
     }
+    resumo() {
+        return `
+        ${this.nome} custa R$${this.preco} 
+        (${this.desconto * 100}% off)
+        `;
+    }
 }
 const telefone = new Produto('Xiaomi', 1200);
-console.log(telefone);
+console.log(telefone.resumo());
 const computador = new Produto('Dell', 2500, 0.1);
-console.log(computador);
+console.log(computador.resumo());
+//desafio
 //# sourceMappingURL=classes.js.map
