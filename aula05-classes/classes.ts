@@ -430,3 +430,21 @@ class Unico {
 //não posso fazer Unico.agora, mas posso fazer:
 console.log(Unico.getInstance().agora())
 
+
+//atributos somente de leitura
+//ou seja uma vez inicializado não pode ser alterado
+
+class Aviao {
+    public readonly modelo: string
+
+    constructor(modelo: string,
+        public readonly prefixo: string) {
+            this.modelo = modelo
+        }
+}
+
+const turboHelice = new Aviao('Tu-114','PT-ABC')
+//turboHelice.modelo = 'CD-8'
+console.log(turboHelice)
+//como ele foi inicializado uma vez, ele não pode ser mais alterado
+
