@@ -189,4 +189,45 @@ Matematica.PI = 3.1416;
 //const m1 = new Matematica()
 //m1.PI = 4.2
 console.log(Matematica.areCirc(4));
+//Membros estáticos
+//pertece a class e não a instância
+//ex:
+class Prod {
+    constructor(nome, preco) {
+        this.nome = nome;
+        this.preco = preco;
+    }
+}
+//objetos
+const prod1 = new Prod('Caneta', 3);
+console.log(prod1);
+const prod2 = new Prod('Lápis', 2);
+//vc pode ter vários N produtos, com determinado nome e preço
+const prodN = new Prod('xxxx', 0);
+//o que diferencia uma instância da outra?
+//cada instancia gerada vai ter os mesmos atributos
+//caso você tenha método, todos os objetos tbm terão
+//o que vai diferencia são os atributos
+//cada um tem seu próprio valor(nome, preco) associado ao atributo
+//quando vc usa a palavra static
+//vc estar trocando esse valor que pertece a instancia
+//vc estar colocando isso diretamente associado a class
+//ou seja quantas class prod eu preciso ter? apenas 01
+//apartir dessa class, usando operador new vc pode criar quantos produtos vc quiser
+//quando o atributo é static, significa que o seu valor est associado a class
+//e não a cada uma das instâncias
+//ex:
+class Matematica1 {
+    static areaCirc(raio) {
+        return this.PI * raio * raio;
+    }
+}
+Matematica1.PI = 3.1416;
+// const m1 = new Matematica1()
+// m1.PI = 4.2
+// console.log(m1.areaCirc(4))
+//usando static eu não preciso mais instanciar
+//eu simplesmente acesso nome da class.metodo
+console.log(Matematica1.areaCirc(4));
+//com static vc tá no nível da class e não disponivel para instancias
 //# sourceMappingURL=classes.js.map
