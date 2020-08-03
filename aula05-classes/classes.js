@@ -297,4 +297,17 @@ console.log(c1.getResultado());
 let c2 = new Multiplicar();
 c2.executar(2, 3, 4, 5);
 console.log(c2.getResultado());
+//constructor privado e singleton
+//tornar o constructor privado e retornar uma instancia
+class Unico {
+    constructor() { }
+    static getInstance() {
+        return Unico.instance;
+    }
+    agora() {
+        return new Date;
+    }
+}
+Unico.instance = new Unico;
+console.log(Unico.getInstance().agora());
 //# sourceMappingURL=classes.js.map

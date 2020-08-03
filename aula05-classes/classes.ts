@@ -402,3 +402,22 @@ console.log(c1.getResultado())
 let c2 = new Multiplicar()
 c2.executar(2, 3, 4, 5)
 console.log(c2.getResultado())
+
+
+//constructor privado e singleton
+//tornar o constructor privado e retornar uma instancia
+class Unico {
+    private static instance: Unico = new Unico
+    private constructor() {}
+
+    static getInstance(): Unico {
+        return Unico.instance
+    }
+
+    agora(){
+        return new Date
+    }
+    
+}
+
+console.log(Unico.getInstance().agora())
