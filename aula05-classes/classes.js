@@ -303,11 +303,16 @@ class Unico {
     constructor() { }
     static getInstance() {
         return Unico.instance;
+        //aqui eu estou retornando exatamente o tipo da minha class
     }
+    //metods não estão associado a class e sim a instancia.
     agora() {
         return new Date;
     }
 }
 Unico.instance = new Unico;
+// const errado = new Unico()
+// errado.agora()
+//não posso fazer Unico.agora, mas posso fazer:
 console.log(Unico.getInstance().agora());
 //# sourceMappingURL=classes.js.map
