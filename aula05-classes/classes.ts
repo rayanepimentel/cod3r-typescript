@@ -306,3 +306,99 @@ console.log(Matematica1.areaCirc(4))
 
 //com static vc tá no nível da class e não disponivel para instancias
 
+
+
+//Class Abstrata
+
+//class perde a habilidade de ser isntanciada.
+
+abstract class mat {
+
+    PI: number = 3.1416
+    
+    areaCirc(raio: number): number {
+        return this.PI * raio * raio
+    }
+}
+
+//console.log(new x(4))
+//uma class abstract não pode ser instanciada
+//pq criar uma class que não pode instanciada?
+
+//serve para herdar para outras class
+//ter essa class como pai para outras classes
+//e reusar código a partir de uma class abstract
+//mas vc não quer instancia aquela class
+//mas quer instancia os filhos 
+
+//vc pode definir uma class inacabada
+//ex:
+//vc tem uma class x, tem uma function y que recebe valor a e vai retornar number
+//dentro da class x eu não sei como implementar a função y
+//só vou saber implementar nas classes filhas
+//cada class filha vai ter uma implementação diferente
+//a unica coisa que eu sei, é que a class x, terá obrigatoriamente o método y
+
+abstract class x {
+   // y(a: number): number {
+        //vc pode tirar o corpo dessa função
+        //e marcar a função/método como abstract
+   // }
+
+   abstract y(a: number): number
+
+   //e vc pode ter outros métodos concretos. ex:
+   w(b: number): void {
+       console.log(b)
+   }
+
+}
+
+
+//resumindo
+//em um class abstract eu posso ter:
+// métodos obstrata
+//são métodos que eu não sei como implementar
+//posso deixar a class inacabada
+//e posso ter métodos concretos
+
+//exemplo da aula:
+
+abstract class Calculo {
+    protected resultado: number = 0
+
+    //excução do cal. como é que eu vou calcular?
+    //a partir de um conjunto de numeros que eu vou receber
+    //usando o operado rest, que pega todos os numeros e junta
+    abstract executar(...numeros: number[]): void
+    //ou seja, eu vou receber um conjunto de numeros
+    //ele vai realizar o cal e armazenar o valor nessa variavel resultado
+
+    getResultado(): number {
+        return this.resultado
+    }
+}
+
+class Soma extends Calculo {
+    executar(...numeros: number[]): void {
+        this.resultado = numeros.reduce((total, atual) => total + atual)
+    }
+}
+
+class Multiplicar extends Calculo {
+    executar(...numeros: number[]): void {
+        this.resultado = numeros.reduce((total, atual) => total * atual)
+    }
+}
+
+let c1 = new Soma()
+c1.executar(2, 3, 4, 5)
+console.log(c1.getResultado())
+
+c1 = new Multiplicar()
+c1.executar(2, 3, 4, 5)
+console.log(c1.getResultado())
+
+let c2 = new Multiplicar()
+c2.executar(2, 3, 4, 5)
+console.log(c2.getResultado())
