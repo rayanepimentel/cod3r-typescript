@@ -448,3 +448,7 @@ const turboHelice = new Aviao('Tu-114','PT-ABC')
 console.log(turboHelice)
 //como ele foi inicializado uma vez, ele não pode ser mais alterado
 
+
+
+
+
