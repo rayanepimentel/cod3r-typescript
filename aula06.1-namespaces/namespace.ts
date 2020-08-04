@@ -1,5 +1,4 @@
 //namespace
-
 //criar duas funções
 //1 para calcular a circunferência
 //1 para calcular a area do retangulo
@@ -39,20 +38,20 @@
 //vc coloca namespace, o nome do namespace
 
 
-namespace Areas {
-    const PI = 3.14
+// namespace Areas {
+//     const PI = 3.14
 
-    export function circunferencia(raio: number): number {
-        return PI * (Math.pow(raio, 2))
-    }
+//     export function circunferencia(raio: number): number {
+//         return PI * (Math.pow(raio, 2))
+//     }
 
-    export function retangulo(base: number, altura: number): number {
-        return base * altura
-    }
+//     export function retangulo(base: number, altura: number): number {
+//         return base * altura
+//     }
 
-}
+// }
 
-const PI = 2.99
+// const PI = 2.99
 
 //agora temos um Pi associado ao namespace
 //e as duas funções
@@ -62,14 +61,14 @@ const PI = 2.99
 //2 - é preciso exportar as funções
 //export function ..(){}
 //após isso conseguimos acessar:
-console.log(Areas.circunferencia(10))
-console.log(Areas.retangulo(10, 20))
+// console.log(Areas.circunferencia(10))
+// console.log(Areas.retangulo(10, 20))
 
 
 //fora do namespace, crie uma function
 //PI = 2.99
 //ou seja fora do contexto Pi será 2.99
-console.log(PI)
+// console.log(PI)
 //e PI 2.99 não causará inteferencia, influencia no calculo 
 //Areas.circunferencia(10)
 //pq existe um PI dentro no namespace, e ele tá protegido
@@ -98,9 +97,15 @@ console.log(PI)
 //     }
 // }
 
+///<reference path='geometriaCirc.ts'/> 
+///<reference path='geometriaRect.ts'/> 
+
+const PI = 2.99
 
 console.log(Geometria.Area.circunferencia(10))
 console.log(Geometria.Area.retangulo(10, 20))
+
+console.log(PI)
 
 //namespaces em múltiplos arquivos
 
@@ -119,4 +124,23 @@ console.log(Geometria.Area.retangulo(10, 20))
 //fazendo isso ele vai copilar e não dará nenhuma mensagem de erro no console
 
 //por enquanto o tsc -w só monitorando da pasta namespace
-//
+
+//3 - Referenciar apenas o arquivo namespace.ts
+//tsc -w --outFile namespace.js namespace.ts
+//ele vai gerar problema pq não vai reconhecer os outros 2 arquivos
+//uma formar para resolver isso:
+//3.1 dentro de namespace podemos fazer uma referencia dos arquivos
+//no inicio do aquivo namespace.ts 
+/*
+
+///<reference path='geometriaCirc.ts'/> 
+///<reference path='geometriaRect.ts'/> 
+
+*/
+
+//não deu mais erro
+//essa reference serviu para o compilador tsc  encontrar o arquvido
+//e a partir desses arqs. que ele encontrou, ele compilou e fez a reference correta
+
+
+//voltando a pasta raiz do projeto e inicando tsc -w

@@ -1,24 +1,4 @@
-var Geometria;
-(function (Geometria) {
-    var Area;
-    (function (Area) {
-        var PI = 3.14;
-        function circunferencia(raio) {
-            return PI * (Math.pow(raio, 2));
-        }
-        Area.circunferencia = circunferencia;
-    })(Area = Geometria.Area || (Geometria.Area = {}));
-})(Geometria || (Geometria = {}));
-var Geometria;
-(function (Geometria) {
-    var Area;
-    (function (Area) {
-        function retangulo(base, altura) {
-            return base * altura;
-        }
-        Area.retangulo = retangulo;
-    })(Area = Geometria.Area || (Geometria.Area = {}));
-})(Geometria || (Geometria = {}));
+"use strict";
 //namespace
 //criar duas funções
 //1 para calcular a circunferência
@@ -51,19 +31,16 @@ var Geometria;
 //ou seja, vc não precisa de preocupar com scopo global
 //para definir o namespace
 //vc coloca namespace, o nome do namespace
-var Areas;
-(function (Areas) {
-    var PI = 3.14;
-    function circunferencia(raio) {
-        return PI * (Math.pow(raio, 2));
-    }
-    Areas.circunferencia = circunferencia;
-    function retangulo(base, altura) {
-        return base * altura;
-    }
-    Areas.retangulo = retangulo;
-})(Areas || (Areas = {}));
-var PI = 2.99;
+// namespace Areas {
+//     const PI = 3.14
+//     export function circunferencia(raio: number): number {
+//         return PI * (Math.pow(raio, 2))
+//     }
+//     export function retangulo(base: number, altura: number): number {
+//         return base * altura
+//     }
+// }
+// const PI = 2.99
 //agora temos um Pi associado ao namespace
 //e as duas funções
 //para acessar a função Areas, é preciso fazer duas coisas:
@@ -72,12 +49,12 @@ var PI = 2.99;
 //2 - é preciso exportar as funções
 //export function ..(){}
 //após isso conseguimos acessar:
-console.log(Areas.circunferencia(10));
-console.log(Areas.retangulo(10, 20));
+// console.log(Areas.circunferencia(10))
+// console.log(Areas.retangulo(10, 20))
 //fora do namespace, crie uma function
 //PI = 2.99
 //ou seja fora do contexto Pi será 2.99
-console.log(PI);
+// console.log(PI)
 //e PI 2.99 não causará inteferencia, influencia no calculo 
 //Areas.circunferencia(10)
 //pq existe um PI dentro no namespace, e ele tá protegido
@@ -98,8 +75,12 @@ console.log(PI);
 //         }
 //     }
 // }
+///<reference path='geometriaCirc.ts'/> 
+///<reference path='geometriaRect.ts'/> 
+const PI = 2.99;
 console.log(Geometria.Area.circunferencia(10));
 console.log(Geometria.Area.retangulo(10, 20));
+console.log(PI);
 //namespaces em múltiplos arquivos
 //dentro da pasta namespace, crie 2 arquivos:
 //gerometriaCirc.ts e geometriaRect.ts
@@ -115,4 +96,20 @@ console.log(Geometria.Area.retangulo(10, 20));
 //ou seja os tres arquivos serão monitorados para gerar o arquivo namespace.js no final
 //fazendo isso ele vai copilar e não dará nenhuma mensagem de erro no console
 //por enquanto o tsc -w só monitorando da pasta namespace
-//
+//3 - Referenciar apenas o arquivo namespace.ts
+//tsc -w --outFile namespace.js namespace.ts
+//ele vai gerar problema pq não vai reconhecer os outros 2 arquivos
+//uma formar para resolver isso:
+//3.1 dentro de namespace podemos fazer uma referencia dos arquivos
+//no inicio do aquivo namespace.ts 
+/*
+
+///<reference path='geometriaCirc.ts'/>
+///<reference path='geometriaRect.ts'/>
+
+*/
+//não deu mais erro
+//essa reference serviu para o compilador tsc  encontrar o arquvido
+//e a partir desses arqs. que ele encontrou, ele compilou e fez a reference correta
+//voltando a pasta raiz do projeto e inicando tsc -w
+//# sourceMappingURL=namespace.js.map
