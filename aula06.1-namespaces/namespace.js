@@ -112,4 +112,11 @@ console.log(PI);
 //essa reference serviu para o compilador tsc  encontrar o arquvido
 //e a partir desses arqs. que ele encontrou, ele compilou e fez a reference correta
 //voltando a pasta raiz do projeto e inicando tsc -w
+//resumo:
+//a resolução pode ser feita:
+// - pelos imports dos scripts
+// - pode ser feita pela linha de comando
+//   1 - passando arquivo de saída e tods necessário para compilação
+//   2 - passando o arquivo de saída + 1 arquivo ts
+//         2.1 - passando a reference
 //# sourceMappingURL=namespace.js.map
