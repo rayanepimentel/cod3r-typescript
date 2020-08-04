@@ -77,3 +77,27 @@ console.log(PI)
 //se o PI do nasmespace estiver fora, ai sim gerará conflito
 //pq vc tem duas const dentro do mesmo escopo
 //e dentro do namespace ele fica protegido.
+
+
+
+//Namespaces aninhados
+//namespace dentro de outro namespace
+
+namespace Geometria {
+    export namespace Area {
+        const PI = 3.14
+    
+        export function circunferencia(raio: number): number {
+            return PI * (Math.pow(raio, 2))
+        }
+    
+        export function retangulo(base: number, altura: number): number {
+            return base * altura
+        }
+    
+    }
+}
+
+
+console.log(Geometria.Area.circunferencia(10))
+console.log(Geometria.Area.retangulo(10, 20))
