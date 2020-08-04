@@ -41,9 +41,11 @@ class Moto {
     }
 }
 
-const moto = new Moto('Ducati', 50)
+const moto = new Moto('Ducati')
 console.log(moto.buzinar())
+console.log(`v1 ${moto.velocidade}`)
 console.log(moto.acelerar(20))
+console.log(`v2 ${moto.velocidade}`)
 
  
 // Exercício 2 - Herança
@@ -60,26 +62,20 @@ console.log(moto.acelerar(20))
 // }
 // console.log(retangulo.area())
 
-class Objeto2D {
-    constructor(private base: number, private altura: number) {}
+abstract class Objeto2D {
+    constructor(public base: number = 0, public altura: number = 0) {}
 
-    protected calcArea(): number {
-        return this.base * this.altura
-    }
-
-    public calc(): number {
-        return this.calcArea()
-    }
+    abstract area(): number
 }
 
 class ObjetoN extends Objeto2D {
-    public calc(): number {
-        return this.calcArea()
+    area(): number {
+        return this.base * this.altura
     }
 }
 
 const Obj1 = new ObjetoN(5, 2)
-console.log(Obj1.calc())
+console.log(Obj1.area())
  
 // Exercício 3 - Getters & Setters
 // var estagiario = {
@@ -117,13 +113,15 @@ class Estagiario {
     set primeiroNome(valor: string) {
         if(valor.length >= 3) {
             this._primeiroNome = valor
-        } 
+        } else {
+            this._primeiroNome = ''
+        }
     }
 }
 
 const estagiario1 = new Estagiario
-console.log(estagiario1.primeiroNome)
-estagiario1.primeiroNome = 'Le'
-console.log(estagiario1.primeiroNome)
-estagiario1.primeiroNome = 'Maria'
-console.log(estagiario1.primeiroNome)
+console.log(estagiario1.primeiroNome)// ''
+estagiario1.primeiroNome = 'Le' 
+console.log(estagiario1.primeiroNome) //''
+estagiario1.primeiroNome = 'Maria' 
+console.log(estagiario1.primeiroNome)// Maria

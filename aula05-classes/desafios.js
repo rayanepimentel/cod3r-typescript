@@ -33,9 +33,11 @@ class Moto {
         return this.velocidade = this.velocidade + delta;
     }
 }
-const moto = new Moto('Ducati', 50);
+const moto = new Moto('Ducati');
 console.log(moto.buzinar());
+console.log(`v1 ${moto.velocidade}`);
 console.log(moto.acelerar(20));
+console.log(`v2 ${moto.velocidade}`);
 // Exercício 2 - Herança
 // var objeto2D = {
 //     base: 0,
@@ -49,24 +51,18 @@ console.log(moto.acelerar(20));
 // }
 // console.log(retangulo.area())
 class Objeto2D {
-    constructor(base, altura) {
+    constructor(base = 0, altura = 0) {
         this.base = base;
         this.altura = altura;
     }
-    calcArea() {
-        return this.base * this.altura;
-    }
-    calc() {
-        return this.calcArea();
-    }
 }
 class ObjetoN extends Objeto2D {
-    calc() {
-        return this.calcArea();
+    area() {
+        return this.base * this.altura;
     }
 }
 const Obj1 = new ObjetoN(5, 2);
-console.log(Obj1.calc());
+console.log(Obj1.area());
 // Exercício 3 - Getters & Setters
 // var estagiario = {
 //     _primeiroNome: ''
@@ -101,12 +97,15 @@ class Estagiario {
         if (valor.length >= 3) {
             this._primeiroNome = valor;
         }
+        else {
+            this._primeiroNome = '';
+        }
     }
 }
 const estagiario1 = new Estagiario;
-console.log(estagiario1.primeiroNome);
+console.log(estagiario1.primeiroNome); // ''
 estagiario1.primeiroNome = 'Le';
-console.log(estagiario1.primeiroNome);
+console.log(estagiario1.primeiroNome); //''
 estagiario1.primeiroNome = 'Maria';
-console.log(estagiario1.primeiroNome);
+console.log(estagiario1.primeiroNome); // Maria
 //# sourceMappingURL=desafios.js.map
