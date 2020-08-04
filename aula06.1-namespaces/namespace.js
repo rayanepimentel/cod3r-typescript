@@ -1,4 +1,24 @@
-"use strict";
+var Geometria;
+(function (Geometria) {
+    var Area;
+    (function (Area) {
+        var PI = 3.14;
+        function circunferencia(raio) {
+            return PI * (Math.pow(raio, 2));
+        }
+        Area.circunferencia = circunferencia;
+    })(Area = Geometria.Area || (Geometria.Area = {}));
+})(Geometria || (Geometria = {}));
+var Geometria;
+(function (Geometria) {
+    var Area;
+    (function (Area) {
+        function retangulo(base, altura) {
+            return base * altura;
+        }
+        Area.retangulo = retangulo;
+    })(Area = Geometria.Area || (Geometria.Area = {}));
+})(Geometria || (Geometria = {}));
 //namespace
 //criar duas funções
 //1 para calcular a circunferência
@@ -33,7 +53,7 @@
 //vc coloca namespace, o nome do namespace
 var Areas;
 (function (Areas) {
-    const PI = 3.14;
+    var PI = 3.14;
     function circunferencia(raio) {
         return PI * (Math.pow(raio, 2));
     }
@@ -43,7 +63,7 @@ var Areas;
     }
     Areas.retangulo = retangulo;
 })(Areas || (Areas = {}));
-const PI = 2.99;
+var PI = 2.99;
 //agora temos um Pi associado ao namespace
 //e as duas funções
 //para acessar a função Areas, é preciso fazer duas coisas:
@@ -67,21 +87,32 @@ console.log(PI);
 //e dentro do namespace ele fica protegido.
 //Namespaces aninhados
 //namespace dentro de outro namespace
-var Geometria;
-(function (Geometria) {
-    let Area;
-    (function (Area) {
-        const PI = 3.14;
-        function circunferencia(raio) {
-            return PI * (Math.pow(raio, 2));
-        }
-        Area.circunferencia = circunferencia;
-        function retangulo(base, altura) {
-            return base * altura;
-        }
-        Area.retangulo = retangulo;
-    })(Area = Geometria.Area || (Geometria.Area = {}));
-})(Geometria || (Geometria = {}));
+// namespace Geometria {
+//     export namespace Area {
+//         const PI = 3.14
+//         export function circunferencia(raio: number): number {
+//             return PI * (Math.pow(raio, 2))
+//         }
+//         export function retangulo(base: number, altura: number): number {
+//             return base * altura
+//         }
+//     }
+// }
 console.log(Geometria.Area.circunferencia(10));
 console.log(Geometria.Area.retangulo(10, 20));
-//# sourceMappingURL=namespace.js.map
+//namespaces em múltiplos arquivos
+//dentro da pasta namespace, crie 2 arquivos:
+//gerometriaCirc.ts e geometriaRect.ts
+//e vou dividir o namespace geometria nos dois arquvios
+//para funcionar:
+//1 - vc oode fazer os imports dos arquivos no index.js
+//2 - ou pelo terminal
+//pare o terminal (tsc -w)
+//entre na pasta namespace
+//e dentro rode 
+//tsc -w --outFile + arqDeSaida + arquivosQueElePrecisa
+//tsc -w --outFile namespace.js geometriaCirc.ts geometriaRect.ts namespace.ts
+//ou seja os tres arquivos serão monitorados para gerar o arquivo namespace.js no final
+//fazendo isso ele vai copilar e não dará nenhuma mensagem de erro no console
+//por enquanto o tsc -w só monitorando da pasta namespace
+//
