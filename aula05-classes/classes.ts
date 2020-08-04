@@ -450,5 +450,9 @@ console.log(turboHelice)
 
 
 
+//typescript implementou o que não tem no JS
 
+//class
+//paradigma em relação a orientação obj
+//muito mais recurso
 

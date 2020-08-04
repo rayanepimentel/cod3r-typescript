@@ -327,4 +327,8 @@ const turboHelice = new Aviao('Tu-114', 'PT-ABC');
 //turboHelice.modelo = 'CD-8'
 console.log(turboHelice);
 //como ele foi inicializado uma vez, ele não pode ser mais alterado
+//typescript implementou o que não tem no JS
+//class
+//paradigma em relação a orientação obj
+//muito mais recurso
 //# sourceMappingURL=classes.js.map
