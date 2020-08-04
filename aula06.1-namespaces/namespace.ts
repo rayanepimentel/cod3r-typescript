@@ -156,3 +156,9 @@ console.log(PI)
 //         2.1 - passando a reference
 
 
+
+
+//limitações dos namespaces
+//não tem nenhuma menção que é preciso importar ou exportar
+//por isso quando a aplicação começa a crescer, a melho maneira é usar módulos
+

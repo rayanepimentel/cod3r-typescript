@@ -119,4 +119,7 @@ console.log(PI);
 //   1 - passando arquivo de saída e tods necessário para compilação
 //   2 - passando o arquivo de saída + 1 arquivo ts
 //         2.1 - passando a reference
+//limitações dos namespaces
+//não tem nenhuma menção que é preciso importar ou exportar
+//por isso quando a aplicação começa a crescer, a melho maneira é usar módulos
 //# sourceMappingURL=namespace.js.map
