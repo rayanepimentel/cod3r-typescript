@@ -1,9 +1,13 @@
 
-function saudarComOla(pessoa: { nome: string }) {
+interface Humano {
+    nome: string
+}
+
+function saudarComOla(pessoa: Humano) {
     console.log(`Olá, ${pessoa.nome}`)
 }
 
-function mudarNome(pessoa: { nome: string }) {
+function mudarNome(pessoa: Humano) {
     pessoa.nome = 'Maria'
 }
 
