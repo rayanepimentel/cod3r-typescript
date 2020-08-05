@@ -98,9 +98,9 @@ class RealABC {
     b() { }
     c() { }
 }
-function teste(b) { }
-teste(new RealABC);
-console.log(teste);
+// function teste(b: B) {}
+// teste(new RealABC)
+// console.log(teste)
 class AbstrataABD {
     //vc é obrigado declarar a e b
     a() { }

@@ -151,11 +151,11 @@ class RealABC implements ABC {
 }
 
 
-function teste(b: B) {}
+// function teste(b: B) {}
 
-teste(new RealABC)
+// teste(new RealABC)
 
-console.log(teste)
+// console.log(teste)
 
 abstract class AbstrataABD implements A, B {
     //vc é obrigado declarar a e b
@@ -194,3 +194,5 @@ const cli = {
     }
 }
 cli.log()
+
+
