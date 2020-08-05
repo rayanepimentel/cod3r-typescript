@@ -91,7 +91,7 @@ console.log(3 ** 10)
 //função que verificar se o email é valido
 
 interface VerificaIdade {
-    (idade: number): string
+    (idade: number): void
 }
 
 let Habilitacao: VerificaIdade
@@ -118,4 +118,49 @@ let votar = function(i:number) {
     }
 }
 
-console.log(votar(15))
+console.log(votar(18))
+
+
+//Herença
+
+interface A {
+    a(): void 
+}
+
+interface B {
+    b(): void
+}
+
+interface ABC extends A, B {
+    c(): void
+}
+
+class RealA implements A {
+    a(): void {}
+}
+
+class RealB implements A, B {
+    a(): void {}
+    b(): void {}
+}
+
+class RealABC implements ABC {
+    a(): void {}
+    b(): void {}
+    c(): void {}
+}
+
+
+function teste(b: B) {}
+
+teste(new RealABC)
+
+console.log(teste)
+
+abstract class AbstrataABD implements A, B {
+    //vc é obrigado declarar a e b
+    a(): void {}
+    b(): void {}
+
+    abstract d(): void
+}

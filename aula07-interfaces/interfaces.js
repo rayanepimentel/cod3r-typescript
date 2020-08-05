@@ -85,5 +85,25 @@ let votar = function (i) {
         Será obrigado daqui há ${18 - i} anos`;
     }
 };
-console.log(votar(15));
+console.log(votar(18));
+class RealA {
+    a() { }
+}
+class RealB {
+    a() { }
+    b() { }
+}
+class RealABC {
+    a() { }
+    b() { }
+    c() { }
+}
+function teste(b) { }
+teste(new RealABC);
+console.log(teste);
+class AbstrataABD {
+    //vc é obrigado declarar a e b
+    a() { }
+    b() { }
+}
 //# sourceMappingURL=interfaces.js.map
