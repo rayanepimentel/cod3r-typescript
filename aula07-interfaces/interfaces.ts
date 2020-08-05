@@ -62,3 +62,60 @@ meuCliente.saudar('Narayana')
 console.log(meuCliente.ultimaCompra)
 meuCliente.numeroPedido = 12
 console.log(meuCliente.numeroPedido)
+
+
+//interfaces e tipo função
+
+interface FuncaoCalculo {
+    (a: number, b: number): number
+}
+
+let potencia: FuncaoCalculo
+
+potencia = function(base: number, exp: number): number {
+    //Math.pow)3,10
+    //3 ** 10
+    return Array(exp).fill(base).reduce((t, a) => t * a)
+    //a quantidade de elemento de array(baseado no número de exp.)
+    //ou seja o exp é 10, vou ter um array com 10 elem
+    //eu vou preencher esse array com o valo da base
+    //ou seja a base é 3, vou tem 10 vez o número 3 (3,3,3,3,3,3,3,3,3,3)
+    //com reduce, eu consigo multiplicar cada um dos elems. do array
+    
+}
+
+console.log(potencia(3, 10))
+console.log(Math.pow(3, 10))
+console.log(3 ** 10)
+
+//função que verificar se o email é valido
+
+interface VerificaIdade {
+    (idade: number): string
+}
+
+let Habilitacao: VerificaIdade
+
+Habilitacao = function(idade:number) {
+    if(idade >= 18) {
+        return 'Pode dirigir'
+    }else {
+        return `Daqui há ${18 - idade} você pode dirigir`
+    }
+}
+
+console.log(Habilitacao(18))
+
+let votar = function(i:number) {
+    if(i >= 18) {
+        return 'É obrigado por lei a votar'
+    }if(i < 16) {
+        return `Não pode votar. Daqui ${16 - i} anos você pode votar, mas não é obrigado.
+        Mas daqui há ${18 - i} anos você é obrigado a votar`
+    }else(i == 16 || 17) ;{
+        return `Pode votar mais não é obrigado. 
+        Será obrigado daqui há ${18 - i} anos`
+    }
+}
+
+console.log(votar(15))
