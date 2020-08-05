@@ -2,7 +2,8 @@
 interface Humano {
     nome: string
     idade?: number //com ? eu estou dizendo que ele é opcional
-    [prop: string]: any //eu não sei o nome e nem o tipo
+    [prop: string]: any // atributo dinamico. Eu não sei o nome e nem o tipo
+    saudar?(sobrenome: string): void
 }
 
 function saudarComOla(pessoa: Humano) {
@@ -13,9 +14,12 @@ function mudarNome(pessoa: Humano) {
     pessoa.nome = 'Maria'
 }
 
-const pessoa = {
+const pessoa: Humano = {
     nome: 'João',
-    idade: 27
+    idade: 27,
+    saudar(sobrenome: string) {
+        console.log(`Olá, meu nome é ${pessoa.nome} ${sobrenome}`)
+    }
 }
 
 saudarComOla(pessoa)
@@ -25,7 +29,7 @@ saudarComOla(pessoa)
 //alem de termos pssibilidade de usarmos type alias, podemos usar interfaces
 
 
-saudarComOla({nome: 'Jonas', idade: 27, xyz: true })
+//saudarComOla({nome: 'Jonas', idade: 27, xyz: true })
 //nesse contexto não é possivel, ele vai ficar reclamando que esse obj
 //não é derente a interface Humano, pq tem o atributo idade que não tá dentro de Humano
 //posso passar o atributo idade e dizer que ele é opcional
@@ -34,3 +38,6 @@ saudarComOla({nome: 'Jonas', idade: 27, xyz: true })
 //nesse caso eu tbm tenhoa uma sintaxe para dizer que o nome é dinamico, o nome da propriedade, atributo do obj é dinamico
 //para isso usamos um par de [] -> [prop: string]: any
 //
+
+//Interfaces e Módulos
+pessoa.saudar('Teste')
