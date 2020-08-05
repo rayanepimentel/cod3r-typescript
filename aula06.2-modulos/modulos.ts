@@ -3,7 +3,7 @@ import { areaCircunferencia as areaC} from './circunferencia'
 
 console.log(areaC(10))
 console.log(areaR(5, 2))
-console.log('node')
+console.log('Modulo carregado...')
 
 //o browser não cconsegue interpretar 
 //se tivesse interpretando do ponto de vista no node.js
@@ -17,3 +17,10 @@ console.log('node')
 
 //carregando módulos
 //importando no index.js
+
+
+
+
+//importando padrão node.js
+const { digaOla } = require('./novo')
+console.log(digaOla('Ray'))

@@ -4,7 +4,7 @@ const retangulo_1 = require("./retangulo");
 const circunferencia_1 = require("./circunferencia");
 console.log(circunferencia_1.areaCircunferencia(10));
 console.log(retangulo_1.areaRetangulo(5, 2));
-console.log('node');
+console.log('Modulo carregado...');
 //o browser não cconsegue interpretar 
 //se tivesse interpretando do ponto de vista no node.js
 //iria funcionar
@@ -14,4 +14,7 @@ console.log('node');
 //npm i -s systemjs@0.21.6
 //carregando módulos
 //importando no index.js
+//importando padrão node.js
+const { digaOla } = require('./novo');
+console.log(digaOla('Ray'));
 //# sourceMappingURL=modulos.js.map
