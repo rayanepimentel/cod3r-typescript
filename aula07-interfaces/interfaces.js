@@ -106,4 +106,20 @@ class AbstrataABD {
     a() { }
     b() { }
 }
+//interface para estender obj
+const x1 = 2;
+const y1 = 3;
+const z1 = 4;
+Object.prototype.log = function () {
+    console.log(this.toString());
+};
+x1.log();
+y1.log();
+z1.log();
+const cli = {
+    nome: 'XXX', toString() {
+        return this.nome;
+    }
+};
+cli.log();
 //# sourceMappingURL=interfaces.js.map

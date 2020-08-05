@@ -164,3 +164,33 @@ abstract class AbstrataABD implements A, B {
 
     abstract d(): void
 }
+
+//interface para estender obj
+
+
+const x1 = 2
+const y1 = 3
+const z1 = 4
+
+// console.log(x1)
+// console.log(y1)
+// console.log(z1)
+
+interface  Object {
+    log(): void
+}
+
+Object.prototype.log = function() {
+    console.log(this.toString())
+}
+
+x1.log()
+y1.log()
+z1.log()
+
+const cli = { 
+    nome: 'XXX', toString() { 
+        return this.nome 
+    }
+}
+cli.log()
