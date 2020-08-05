@@ -9,7 +9,7 @@ const pessoa = {
     nome: 'João',
     idade: 27,
     saudar(sobrenome) {
-        console.log(`Olá, meu nome é ${pessoa.nome} ${sobrenome}`);
+        console.log(`Olá, meu nome é ${this.nome} ${sobrenome}`);
     }
 };
 saudarComOla(pessoa);
@@ -28,4 +28,22 @@ saudarComOla(pessoa);
 //
 //Interfaces e Módulos
 pessoa.saudar('Teste');
+//interfaces  e class
+//quando vc diz que a class inplements a interface
+//essa class precisa respeitar o que vc definido na interface 
+class Cliente {
+    constructor() {
+        this.ultimaCompra = new Date;
+    }
+    saudar(sobrenome) {
+        console.log(`Olá, meu nome é ${this.nome} ${sobrenome}`);
+    }
+}
+const meuCliente = new Cliente();
+meuCliente.nome = 'Rama';
+saudarComOla(meuCliente);
+meuCliente.saudar('Narayana');
+console.log(meuCliente.ultimaCompra);
+meuCliente.numeroPedido = 12;
+console.log(meuCliente.numeroPedido);
 //# sourceMappingURL=interfaces.js.map

@@ -3,7 +3,7 @@ interface Humano {
     nome: string
     idade?: number //com ? eu estou dizendo que ele é opcional
     [prop: string]: any // atributo dinamico. Eu não sei o nome e nem o tipo
-    saudar?(sobrenome: string): void
+    saudar(sobrenome: string): void
 }
 
 function saudarComOla(pessoa: Humano) {
@@ -18,7 +18,7 @@ const pessoa: Humano = {
     nome: 'João',
     idade: 27,
     saudar(sobrenome: string) {
-        console.log(`Olá, meu nome é ${pessoa.nome} ${sobrenome}`)
+        console.log(`Olá, meu nome é ${this.nome} ${sobrenome}`)
     }
 }
 
@@ -41,3 +41,24 @@ saudarComOla(pessoa)
 
 //Interfaces e Módulos
 pessoa.saudar('Teste')
+
+//interfaces  e class
+//quando vc diz que a class inplements a interface
+//essa class precisa respeitar o que vc definido na interface 
+
+class Cliente implements Humano {
+    nome: string 
+    ultimaCompra: Date = new Date
+    numeroPedido: number
+    saudar(sobrenome: string) {
+        console.log(`Olá, meu nome é ${this.nome} ${sobrenome}`)
+    }
+}
+
+const meuCliente = new Cliente()
+meuCliente.nome = 'Rama'
+saudarComOla(meuCliente)
+meuCliente.saudar('Narayana')
+console.log(meuCliente.ultimaCompra)
+meuCliente.numeroPedido = 12
+console.log(meuCliente.numeroPedido)
