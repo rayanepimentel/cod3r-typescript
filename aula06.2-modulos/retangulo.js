@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.areaR = void 0;
-function areaR(base, altura) {
+exports.areaRetangulo = void 0;
+function areaRetangulo(base, altura) {
     return base * altura;
 }
-exports.areaR = areaR;
+exports.areaRetangulo = areaRetangulo;
 //# sourceMappingURL=retangulo.js.map

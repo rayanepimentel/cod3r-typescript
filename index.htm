@@ -6,6 +6,8 @@
     <title>TypeScript</title>
 </head>
 <body>
+    <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.21.6/system.js'></script> -->
+    <script src='node_modules/systemjs/dist/system.js'></script>
     <script src='aula01-introducao/basico.js'></script>
     <script src='aula02-tipos/tipos.js'></script>
     <script src='aula03-compilador/complicador.js'></script>
@@ -16,6 +18,18 @@
     <script src='aula06.1-namespaces/geometriaCirc.js'></script>
     <script src='aula06.1-namespaces/geometriaRect.js'></script>
     <script src='aula06.1-namespaces/namespace.js'></script>
-    <script src='aula06.2-modulos/modulos.js'></script>
+    <script src='aula06.2-modulos/modulos.js'></script> 
+    <!-- <script>
+        SystemJS.config({
+            baseUrl: '/aula06.2-modulos',
+            packagens: {
+                '/modulos': {
+                    defaultJSExtension: true
+                }
+            }
+        })
+
+        SystemJS.import('./aula06.2-modulos/modulos.js')
+    </script> -->
 </body>
 </html>
