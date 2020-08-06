@@ -131,4 +131,36 @@ const d1 = new Data(1, 2, 2020);
 const d2 = new Data(10, 5, 2020);
 const d12 = new DiferencaEntredadas(d1, d2).executar();
 console.log(d12);
+//Desafio Class Fila generics
+//Atributo: fila (Array)
+//Métodos: entrar(push), proximo(splice) e imprimir
+//crie uma fila com string nomes de pessoas
+//add os elementos da fila
+class Fila {
+    constructor(...nomes) {
+        this.fila = nomes;
+    }
+    entrar(elemento) {
+        this.fila.push(elemento);
+    }
+    proximo() {
+        if (this.fila.length >= 0 && this.fila[0]) {
+            const primeiro = this.fila[0];
+            this.fila.splice(0, 1);
+            return primeiro;
+        }
+        else {
+            return null;
+        }
+    }
+    imprimir() {
+        console.log(this.fila);
+    }
+}
+const nomes = new Fila('Mia', 'Bia', 'Ana');
+nomes.imprimir();
+nomes.entrar('Mel');
+nomes.imprimir();
+nomes.proximo();
+nomes.imprimir();
 //# sourceMappingURL=generics.js.map

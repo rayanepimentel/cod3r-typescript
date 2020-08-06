@@ -10,7 +10,7 @@ function echo(objeto: any) {
 
 console.log(echo('João').length) //4
 console.log(echo(27).length)//não gera erro, mas retorna undefined
-console.log(echo({nome: 'João', idade: 27}).length)//undefined
+console.log(echo({ nome: 'João', idade: 27 }).length)//undefined
 
 
 //no momento que começarmos a usar generics, o compilador irá informar que
@@ -38,7 +38,7 @@ console.log(echoMelhorado('27').length)//como '27' é um tipo string, ele retorn
 //console.log(echoMelhorado<number>('27').length)//nesse cenário ele subs. o T por number, pq foi especificado que T é number
 //tanto o param, quão o retorno passa a ser tipo number
 
-console.log(echoMelhorado({nome: 'João', idade: 27}).idade)
+console.log(echoMelhorado({ nome: 'João', idade: 27 }).idade)
 console.log(echoMelhorado('Maria').toLocaleLowerCase())
 console.log(echoMelhorado('Maria').toLocaleUpperCase())
 
@@ -72,7 +72,7 @@ imprimir<string>(['Maria', 'José', '1', '2'])//aqui eu estou garantindo que ser
 //como por exemplos tipos objetos
 imprimir<{ nome: string, idade: number }>([
     { nome: 'Ana', idade: 5 },
-    { nome: 'Fulano', idade: 4}
+    { nome: 'Fulano', idade: 4 }
 ])
 
 //especificando o tipo e usando esse tipo dentro da notação generics
@@ -81,7 +81,7 @@ type Aluno = { nome: string, idade: number }
 
 imprimir<Aluno>([
     { nome: 'Ana', idade: 10 },
-    { nome: 'Fulano', idade: 11}
+    { nome: 'Fulano', idade: 11 }
 ])
 
 
@@ -93,7 +93,7 @@ imprimir<Aluno>([
 const chamarEcho: <T>(aaa: T) => T = echoMelhorado
 console.log(chamarEcho<string>('aquii'))
 
-type Echo = <T>(bbb: T) => T 
+type Echo = <T>(bbb: T) => T
 const chamarEcho2: Echo = echoMelhorado
 console.log(chamarEcho2<string>('aquii2'))
 
@@ -105,7 +105,7 @@ console.log(chamarEcho2<string>('aquii2'))
 //ex. class sem generics
 class OperacaoBinaria {
     constructor(public operando1: any,
-        public operando2: any) {}
+        public operando2: any) { }
 
     executar() {
         return this.operando1 + this.operando2
@@ -124,8 +124,8 @@ console.log(new OperacaoBinaria('Oi', {}).executar()) //Oi[object Object]
 //com generics ele faz essa validação
 
 abstract class OperacaoBinaria2<Y, R> {
-    constructor(public operando1: Y ,
-        public operando2: Y) {}
+    constructor(public operando1: Y,
+        public operando2: Y) { }
 
     //o resultado da função pode ser do tipo R
     //ou seja, pode ser qualquer coisa não obrigatorio ser do tipo Y
@@ -141,7 +141,7 @@ class SomaBinaria extends OperacaoBinaria2<number, number> {
 }
 
 
-console.log(new SomaBinaria(10, 7).executar()) 
+console.log(new SomaBinaria(10, 7).executar())
 
 console.log(Data)
 //Data é uma class que já definimos na aula 05 classes.ts
@@ -162,9 +162,9 @@ class Data {
 }
 */
 
-class DiferencaEntredadas 
+class DiferencaEntredadas
     extends OperacaoBinaria2<Data, string> {
-    
+
     getTime(data: Data): number {
         let { dia, mes, ano } = data
         return new Date(`${mes}/${dia}/${ano}`).getTime()
@@ -184,3 +184,48 @@ const d2 = new Data(10, 5, 2020)
 
 const d12 = new DiferencaEntredadas(d1, d2).executar()
 console.log(d12)
+
+
+//Desafio Class Fila generics
+//Atributo: fila (Array)
+//Métodos: entrar(push), proximo(splice) e imprimir
+
+//crie uma fila com string nomes de pessoas
+//add os elementos da fila
+
+
+class Fila<T> {
+    private fila: Array<T>
+
+    constructor(...nomes: T[]) {
+        this.fila = nomes
+    }
+
+    entrar(elemento: T) {
+        this.fila.push(elemento)
+    }
+
+    proximo(): T | null{
+        if (this.fila.length >= 0 && this.fila[0]) {
+            const primeiro = this.fila[0]
+            this.fila.splice(0, 1)
+            return primeiro
+        } else {
+            return null
+        }
+    }
+
+    imprimir() {
+        console.log(this.fila)
+    }
+
+}
+
+const nomes = new Fila<string>('Mia', 'Bia', 'Ana')
+nomes.imprimir()
+nomes.entrar('Mel')
+nomes.imprimir()
+nomes.proximo()
+nomes.imprimir()
+
+
