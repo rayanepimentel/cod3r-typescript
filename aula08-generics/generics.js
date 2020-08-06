@@ -60,4 +60,10 @@ imprimir([
     { nome: 'Ana', idade: 10 },
     { nome: 'Fulano', idade: 11 }
 ]);
+//Função com Generics
+//tipos genricos
+const chamarEcho = echoMelhorado;
+console.log(chamarEcho('aquii'));
+const chamarEcho2 = echoMelhorado;
+console.log(chamarEcho2('aquii2'));
 //# sourceMappingURL=generics.js.map

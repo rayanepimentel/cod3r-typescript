@@ -85,3 +85,14 @@ imprimir<Aluno>([
 ])
 
 
+
+
+
+//Função com Generics
+//tipos genricos
+const chamarEcho: <T>(aaa: T) => T = echoMelhorado
+console.log(chamarEcho<string>('aquii'))
+
+type Echo = <T>(bbb: T) => T 
+const chamarEcho2: Echo = echoMelhorado
+console.log(chamarEcho2<string>('aquii2'))
