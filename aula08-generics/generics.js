@@ -31,4 +31,11 @@ console.log(echoMelhorado('27').length); //como '27' é um tipo string, ele reto
 console.log(echoMelhorado({ nome: 'João', idade: 27 }).idade);
 console.log(echoMelhorado('Maria').toLocaleLowerCase());
 console.log(echoMelhorado('Maria').toLocaleUpperCase());
+//usando generics com array
+//Generics disponiveis na API
+const avaliacoes = [10, 9.3, 7.7];
+avaliacoes.push(8.4);
+avaliacoes.push('5.5');
+console.log(avaliacoes); //veio o number 8.4 + a string '5.5'
+//(5) [10, 9.3, 7.7, 8.4, "5.5"]
 //# sourceMappingURL=generics.js.map
