@@ -29,13 +29,13 @@ function echoMelhorado<T>(objeto: T): T {
 
 console.log(echoMelhorado('João').length)
 
-console.log(echoMelhorado(27).length)//aqui ele dectou que vc passou o tipo t
+//console.log(echoMelhorado(27).length)//aqui ele dectou que vc passou o tipo t
 //que é do tipo number(27) e automaticamente ele assumiu que aqui esse T é um number
 //e ele sabe que o number não tem o .length
 
 console.log(echoMelhorado('27').length)//como '27' é um tipo string, ele retorna sem erro
 //mas se você indicar que T é do tipo number, assim>
-console.log(echoMelhorado<number>('27').length)//nesse cenário ele subs. o T por number, pq foi especificado que T é number
+//console.log(echoMelhorado<number>('27').length)//nesse cenário ele subs. o T por number, pq foi especificado que T é number
 //tanto o param, quão o retorno passa a ser tipo number
 
 console.log(echoMelhorado({nome: 'João', idade: 27}).idade)
