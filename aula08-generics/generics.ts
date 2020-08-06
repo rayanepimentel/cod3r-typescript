@@ -120,3 +120,28 @@ console.log(new OperacaoBinaria('Oi', {}).executar()) //Oi[object Object]
 //dessa forma ele não gera nenhum tipo de validação
 //ele simplesmente acha que é normal somar duas coisas
 //e muitas vezes, na prática isso não pode fazer menor sentido
+
+//com generics ele faz essa validação
+
+abstract class OperacaoBinaria2<Y, R> {
+    constructor(public operando1: Y ,
+        public operando2: Y) {}
+
+    //o resultado da função pode ser do tipo R
+    //ou seja, pode ser qualquer coisa não obrigatorio ser do tipo Y
+    //ex: pode ser que Y sem number e o retorno seja uma string(frase)
+
+    abstract executar(): R
+}
+
+class SomaBinaria extends OperacaoBinaria2<number, number> {
+    executar(): number {
+        return this.operando1 + this.operando2
+    }
+}
+
+
+console.log(new SomaBinaria(10, 7).executar()) 
+
+
+
