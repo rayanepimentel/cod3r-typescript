@@ -11,3 +11,33 @@ function echo(objeto: any) {
 console.log(echo('João').length) //4
 console.log(echo(27).length)//não gera erro, mas retorna undefined
 console.log(echo({nome: 'João', idade: 27}).length)//undefined
+
+
+//no momento que começarmos a usar generics, o compilador irá informar que
+//vc está tentando acessar alguma coisa que não pertece ao number, no exemplo echo(27)
+
+
+//criando funções com generics
+//primeiro precisa definir que a função tem o tipo generics
+//usando < > 
+//entre < > vc pode colocar o tipo T, y, o que quiser
+//por enquanto é um tipo generico e depois vamos especificar esse tipo7
+//e o objeto é do tipo T
+function echoMelhorado<T>(objeto: T): T {
+    return objeto
+}
+
+console.log(echoMelhorado('João').length)
+
+console.log(echoMelhorado(27).length)//aqui ele dectou que vc passou o tipo t
+//que é do tipo number(27) e automaticamente ele assumiu que aqui esse T é um number
+//e ele sabe que o number não tem o .length
+
+console.log(echoMelhorado('27').length)//como '27' é um tipo string, ele retorna sem erro
+//mas se você indicar que T é do tipo number, assim>
+console.log(echoMelhorado<number>('27').length)//nesse cenário ele subs. o T por number, pq foi especificado que T é number
+//tanto o param, quão o retorno passa a ser tipo number
+
+console.log(echoMelhorado({nome: 'João', idade: 27}).idade)
+console.log(echoMelhorado('Maria').toLocaleLowerCase())
+console.log(echoMelhorado('Maria').toLocaleUpperCase())
