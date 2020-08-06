@@ -35,7 +35,11 @@ console.log(echoMelhorado('Maria').toLocaleUpperCase());
 //Generics disponiveis na API
 const avaliacoes = [10, 9.3, 7.7];
 avaliacoes.push(8.4);
-avaliacoes.push('5.5');
-console.log(avaliacoes); //veio o number 8.4 + a string '5.5'
+//avaliacoes.push('5.5')
+//console.log(avaliacoes)//veio o number 8.4 + a string '5.5'
 //(5) [10, 9.3, 7.7, 8.4, "5.5"]
+//a partir do momento que eu indico que o tipo generics do array é number
+//ele indica o erro
+//avaliacoes.push('6.6')//O argumento do tipo '"6.6"' não é atribuível ao parâmetro do tipo 'number'
+console.log(avaliacoes);
 //# sourceMappingURL=generics.js.map
