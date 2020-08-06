@@ -66,4 +66,22 @@ const chamarEcho = echoMelhorado;
 console.log(chamarEcho('aquii'));
 const chamarEcho2 = echoMelhorado;
 console.log(chamarEcho2('aquii2'));
+//Class com Generics
+//ex. class sem generics
+class OperacaoBinaria {
+    constructor(operando1, operando2) {
+        this.operando1 = operando1;
+        this.operando2 = operando2;
+    }
+    executar() {
+        return this.operando1 + this.operando2;
+    }
+}
+console.log(new OperacaoBinaria(10, 2).executar()); //12
+console.log(new OperacaoBinaria('Bom ', 'dia').executar()); // Bom dia
+console.log(new OperacaoBinaria('Oi', 10).executar()); //oi10
+console.log(new OperacaoBinaria('Oi', {}).executar()); //Oi[object Object]
+//dessa forma ele não gera nenhum tipo de validação
+//ele simplesmente acha que é normal somar duas coisas
+//e muitas vezes, na prática isso não pode fazer menor sentido
 //# sourceMappingURL=generics.js.map

@@ -96,3 +96,27 @@ console.log(chamarEcho<string>('aquii'))
 type Echo = <T>(bbb: T) => T 
 const chamarEcho2: Echo = echoMelhorado
 console.log(chamarEcho2<string>('aquii2'))
+
+
+
+
+//Class com Generics
+
+//ex. class sem generics
+class OperacaoBinaria {
+    constructor(public operando1: any,
+        public operando2: any) {}
+
+    executar() {
+        return this.operando1 + this.operando2
+    }
+}
+
+console.log(new OperacaoBinaria(10, 2).executar()) //12
+console.log(new OperacaoBinaria('Bom ', 'dia').executar()) // Bom dia
+console.log(new OperacaoBinaria('Oi', 10).executar()) //oi10
+console.log(new OperacaoBinaria('Oi', {}).executar()) //Oi[object Object]
+
+//dessa forma ele não gera nenhum tipo de validação
+//ele simplesmente acha que é normal somar duas coisas
+//e muitas vezes, na prática isso não pode fazer menor sentido
