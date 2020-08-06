@@ -42,4 +42,22 @@ avaliacoes.push(8.4);
 //ele indica o erro
 //avaliacoes.push('6.6')//O argumento do tipo '"6.6"' não é atribuível ao parâmetro do tipo 'number'
 console.log(avaliacoes);
+//outro exemplo
+function imprimir(args) {
+    args.forEach(elemento => console.log(elemento));
+}
+imprimir([1, 2, 4, 5]);
+imprimir(['a', 'b', 'c']);
+imprimir([true, false, 'ab', 10]);
+imprimir(['Maria', 'José', '1', '2']); //aqui eu estou garantindo que será um array de tipo string
+//tbm tomos ter tipo mais complexos
+//como por exemplos tipos objetos
+imprimir([
+    { nome: 'Ana', idade: 5 },
+    { nome: 'Fulano', idade: 4 }
+]);
+imprimir([
+    { nome: 'Ana', idade: 10 },
+    { nome: 'Fulano', idade: 11 }
+]);
 //# sourceMappingURL=generics.js.map
