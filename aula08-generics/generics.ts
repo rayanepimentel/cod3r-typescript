@@ -143,5 +143,44 @@ class SomaBinaria extends OperacaoBinaria2<number, number> {
 
 console.log(new SomaBinaria(10, 7).executar()) 
 
+console.log(Data)
+//Data é uma class que já definimos na aula 05 classes.ts
 
+/*
+class Data {
+    dia: number
+    public mes: number
+    ano: number
 
+    constructor(dia: number = 1, mes: number = 1, ano:number = 1970) {
+ 
+        this.dia = dia
+        this.mes = mes
+        this.ano = ano
+       
+    }
+}
+*/
+
+class DiferencaEntredadas 
+    extends OperacaoBinaria2<Data, string> {
+    
+    getTime(data: Data): number {
+        let { dia, mes, ano } = data
+        return new Date(`${mes}/${dia}/${ano}`).getTime()
+    }
+
+    executar(): string {
+        const y1 = this.getTime(this.operando1)
+        const y2 = this.getTime(this.operando2)
+        const diferenca = Math.abs(y1 - y2)//pega o valor absoluto e não tem perigo de sair negativo
+        const dia = 1000 * 60 * 60 * 24
+        return `${Math.ceil(diferenca / dia)} dia(s)`
+    }
+}
+
+const d1 = new Data(1, 2, 2020)
+const d2 = new Data(10, 5, 2020)
+
+const d12 = new DiferencaEntredadas(d1, d2).executar()
+console.log(d12)
