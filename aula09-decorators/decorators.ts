@@ -3,13 +3,13 @@
 //e sabemos que a class é na verdade uma function typeof Eletrodomestico
 //@logarClasse
 //@logarClasseSe(true)
-@decorator('Teste', 123)
-class Eletrodomestico {
-    constructor() {
-        console.log('novo....')
-    }
+// @decorator('Teste', 123)
+// class Eletrodomestico {
+//     constructor() {
+//         console.log('novo....')
+//     }
 
-}
+// }
 
 //console.log(typeof Eletrodomestico)//é uma função
 
@@ -43,3 +43,35 @@ function decorator(a: string, b: number) {
         console.log(a + ' ' + b)
     }
 }
+
+//alterando Construtor com Decorator de Classe
+
+
+interface Eletrodomestico {
+    imprimir?(): void
+}
+// @logarClasse
+// @logarClasseSe(true)
+// @decorator('Teste', 123)
+@imprimivel
+class Eletrodomestico {
+    constructor() {
+        console.log('novo....')
+    }
+
+}
+
+function imprimivel(constructor: Function) {
+    constructor.prototype.imprimir = function() {
+        console.log(this)
+    }
+}
+
+//new Eletrodomestico().imprimir()//imprime, mas fica reclamando
+//umas das possibilidades para corrigir é usar cast
+(<any>new Eletrodomestico()).imprimir()
+//ou criando uma interface
+new Eletrodomestico().imprimir()
+//ou
+const eletro = new Eletrodomestico()
+eletro.imprimir && eletro.imprimir()
