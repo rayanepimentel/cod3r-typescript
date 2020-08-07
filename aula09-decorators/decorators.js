@@ -8,17 +8,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 //Decorators
 //class inicalmente nada
 //e sabemos que a class é na verdade uma function typeof Eletrodomestico
+//@logarClasse
+//@logarClasseSe(true)
 let Eletrodomestico = class Eletrodomestico {
     constructor() {
         console.log('novo....');
     }
 };
 Eletrodomestico = __decorate([
-    logarClasse
+    decorator('Teste', 123)
 ], Eletrodomestico);
 //console.log(typeof Eletrodomestico)//é uma função
-//o decoration na verdade é uma função
-//criar um function, o nome do decoration logarClasse
+//o decorator na verdade é uma função
+//criar um function, o nome do decorator logarClasse
 //e o logarClasse será referenciado acima da class com @nomedele
 //e cmo param. logarClasse recebe uma função, que pode ser qualquer nome
 function logarClasse(xuxu) {
@@ -26,5 +28,17 @@ function logarClasse(xuxu) {
 }
 //recapitulando:
 //criamos uma função
-//essa função será chamada com decoration, com param. a função(class Eletro...) que vc decorou
+//essa função será chamada com decorator, com param. a função(class Eletro...) que vc decorou
+//esse decorator só será chamado quando a classe for carregada
+//Decorator Factory
+//uma função que retorna um decorator
+function logarClasseSe(valor) {
+    return valor ? logarClasse : null;
+}
+//ou
+function decorator(a, b) {
+    return function (_) {
+        console.log(a + ' ' + b);
+    };
+}
 //# sourceMappingURL=decorators.js.map
