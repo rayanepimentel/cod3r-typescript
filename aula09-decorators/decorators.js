@@ -39,18 +39,6 @@ function decorator(a, b) {
         console.log(a + ' ' + b);
     };
 }
-//Alterando Construtor com Decorator de Class
-//@logarClasse
-//@logarClasseSe(true)
-//@decorator('Teste', 123)
-let Eletrodomestico = class Eletrodomestico {
-    constructor() {
-        console.log('novo - constructor class Eletrodomestico');
-    }
-};
-Eletrodomestico = __decorate([
-    logarObjeto
-], Eletrodomestico);
 function logarObjeto(gatinho) {
     console.log('carregado o decorator  uma única vez');
     //vai retornar uma class anonima, que não tem nome. Mas que herda o gatinho, com constructor que foi definido
@@ -65,8 +53,25 @@ function logarObjeto(gatinho) {
         }
     };
 }
-//no momento que function logarObjeto() é carregado ele substitui a class de Eletrodomestico
-//pela class anonima class extends gatinho {....}
-new Eletrodomestico();
-new Eletrodomestico();
+let Eletrodomestico = class Eletrodomestico {
+    constructor() {
+        console.log('novo - constructor class Eletrodomestico');
+    }
+};
+Eletrodomestico = __decorate([
+    imprimivel
+], Eletrodomestico);
+function imprimivel(Construtor) {
+    Construtor.prototype.imprimir = function () {
+        console.log(this);
+    };
+}
+//new Eletrodomestico().imprimir()//imprime mas mostra eeeo
+//outra maneira de fazer para evitar esse erro:
+//(<any>new Eletrodomestico()).imprimir()//não exibiu o erro
+//ou criar uma interface
+new Eletrodomestico().imprimir(); //com opcional
+//ou com validações
+const eletro = new Eletrodomestico();
+eletro.imprimir && eletro.imprimir();
 //# sourceMappingURL=decorators.js.map

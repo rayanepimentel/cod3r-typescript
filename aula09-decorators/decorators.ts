@@ -50,13 +50,13 @@ function decorator(a: string, b: number) {
 //@logarClasse
 //@logarClasseSe(true)
 //@decorator('Teste', 123)
-@logarObjeto
-class Eletrodomestico {
-    constructor() {
-        console.log('novo - constructor class Eletrodomestico')
-    }
+// @logarObjeto
+// class Eletrodomestico {
+//     constructor() {
+//         console.log('novo - constructor class Eletrodomestico')
+//     }
 
-}
+// }
 
 type Construtor = {new(...args: any[]): {}} 
 
@@ -77,5 +77,38 @@ function logarObjeto(gatinho: Construtor) {
 
 //no momento que function logarObjeto() é carregado ele substitui a class de Eletrodomestico
 //pela class anonima class extends gatinho {....}
-new Eletrodomestico()
-new Eletrodomestico()
+
+// new Eletrodomestico()
+// new Eletrodomestico()
+
+
+
+
+//Adicionando Método com Decorator de Class
+
+interface Eletrodomestico {
+    imprimir?(): void
+}
+
+@imprimivel
+class Eletrodomestico {
+    constructor() {
+        console.log('novo - constructor class Eletrodomestico')
+    }
+
+}
+
+function imprimivel(Construtor: Function) {
+    Construtor.prototype.imprimir = function() {
+        console.log(this)
+    }
+}
+
+//new Eletrodomestico().imprimir()//imprime mas mostra eeeo
+//outra maneira de fazer para evitar esse erro:
+//(<any>new Eletrodomestico()).imprimir()//não exibiu o erro
+//ou criar uma interface
+new Eletrodomestico().imprimir()//com opcional
+//ou com validações
+const eletro = new Eletrodomestico()
+eletro.imprimir && eletro.imprimir()
