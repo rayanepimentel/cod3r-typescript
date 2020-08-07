@@ -3,13 +3,13 @@
 //e sabemos que a class é na verdade uma function typeof Eletrodomestico
 //@logarClasse
 //@logarClasseSe(true)
-@decorator('Teste', 123)
-class Eletrodomestico {
-    constructor() {
-        console.log('novo....')
-    }
+// @decorator('Teste', 123)
+// class Eletrodomestico {
+//     constructor() {
+//         console.log('novo....')
+//     }
 
-}
+// }
 
 //console.log(typeof Eletrodomestico)//é uma função
 
@@ -43,5 +43,6 @@ function decorator(a: string, b: number) {
         console.log(a + ' ' + b)
     }
 }
+
 
 //Alterando Construtor com Decorator de Class
