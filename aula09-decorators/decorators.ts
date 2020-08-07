@@ -43,3 +43,5 @@ function decorator(a: string, b: number) {
         console.log(a + ' ' + b)
     }
 }
+
+//Alterando Construtor com Decorator de Class

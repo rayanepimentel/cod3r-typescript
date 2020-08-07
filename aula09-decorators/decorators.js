@@ -41,4 +41,5 @@ function decorator(a, b) {
         console.log(a + ' ' + b);
     };
 }
+//Alterando Construtor com Decorator de Class
 //# sourceMappingURL=decorators.js.map
