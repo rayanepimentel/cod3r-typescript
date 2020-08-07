@@ -90,6 +90,7 @@ interface Eletrodomestico {
     imprimir?(): void
 }
 
+@logarObjeto
 @imprimivel
 class Eletrodomestico {
     constructor() {
@@ -112,3 +113,18 @@ new Eletrodomestico().imprimir()//com opcional
 //ou com validações
 const eletro = new Eletrodomestico()
 eletro.imprimir && eletro.imprimir()
+
+
+//Múltiplos Decorators
+//é possível passar mais de um decorators
+//ex
+/*
+@logarObjeto
+@imprimivel
+class Eletrodomestico {
+    constructor() {
+        console.log('novo - constructor class Eletrodomestico')
+    }
+
+}
+*/

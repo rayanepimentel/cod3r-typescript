@@ -59,6 +59,7 @@ let Eletrodomestico = class Eletrodomestico {
     }
 };
 Eletrodomestico = __decorate([
+    logarObjeto,
     imprimivel
 ], Eletrodomestico);
 function imprimivel(Construtor) {
@@ -74,4 +75,17 @@ new Eletrodomestico().imprimir(); //com opcional
 //ou com validações
 const eletro = new Eletrodomestico();
 eletro.imprimir && eletro.imprimir();
+//Múltiplos Decorators
+//é possível passar mais de um decorators
+//ex
+/*
+@logarObjeto
+@imprimivel
+class Eletrodomestico {
+    constructor() {
+        console.log('novo - constructor class Eletrodomestico')
+    }
+
+}
+*/ 
 //# sourceMappingURL=decorators.js.map
