@@ -9,6 +9,12 @@
 //     constructor() {
 //         console.log('novo....')
 //     }
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
 // }
 //console.log(typeof Eletrodomestico)//é uma função
 //o decorator na verdade é uma função
@@ -34,4 +40,33 @@ function decorator(a, b) {
     };
 }
 //Alterando Construtor com Decorator de Class
+//@logarClasse
+//@logarClasseSe(true)
+//@decorator('Teste', 123)
+let Eletrodomestico = class Eletrodomestico {
+    constructor() {
+        console.log('novo - constructor class Eletrodomestico');
+    }
+};
+Eletrodomestico = __decorate([
+    logarObjeto
+], Eletrodomestico);
+function logarObjeto(gatinho) {
+    console.log('carregado o decorator  uma única vez');
+    //vai retornar uma class anonima, que não tem nome. Mas que herda o gatinho, com constructor que foi definido
+    return class extends gatinho {
+        constructor(...args) {
+            //obrigatoriamente preciso chamar o super
+            //chamando o super ele vai no constructor da class eletrodomestico
+            //claro se a classe estiver decorada com logarObjeto
+            console.log('Antes de chamar o constructor super');
+            super(...args);
+            console.log('Depois de chamar o constructor super');
+        }
+    };
+}
+//no momento que function logarObjeto() é carregado ele substitui a class de Eletrodomestico
+//pela class anonima class extends gatinho {....}
+new Eletrodomestico();
+new Eletrodomestico();
 //# sourceMappingURL=decorators.js.map
