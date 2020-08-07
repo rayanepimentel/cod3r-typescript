@@ -163,4 +163,18 @@ nomes.entrar('Mel');
 nomes.imprimir();
 nomes.proximo();
 nomes.imprimir();
+// Restrições (constraints)
+//vc consegue estabelecer algumas restrições ou constraints, quando vc trabalha com generics
+//ex, em fila, vc que receber T só tipo numericos
+//class Fila <T extends number>
+//ou seja nesse momento vc criou uma restrição para o T
+//T só pode ser do tipo number, ou qualquer outra subclass que exista
+//ele vai reclarmar, pq passamos uma string
+//mas vc pode passar mais um tipo
+//class Fila <T extends number | string>
+const fila = new Fila(1, 2, 3);
+fila.imprimir();
+//entretanto se vc colocar outro tipo, ele vai vai permitir
+//const fila1 = new Fila<boolean>(true, false)
+//O tipo 'boolean' não satisfaz a restrição 'string | number'
 //# sourceMappingURL=generics.js.map
