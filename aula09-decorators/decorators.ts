@@ -9,6 +9,8 @@
 //         console.log('novo....')
 //     }
 
+
+
 // }
 
 //console.log(typeof Eletrodomestico)//é uma função
@@ -17,9 +19,9 @@
 //criar um function, o nome do decorator logarClasse
 //e o logarClasse será referenciado acima da class com @nomedele
 //e cmo param. logarClasse recebe uma função, que pode ser qualquer nome
-function logarClasse(xuxu: Function) {
-    console.log(xuxu)//aqui sera exatamente a class Eletrodomestico
-}
+// function logarClasse(constructor: Function) {
+//     console.log(constructor)//aqui sera exatamente a class Eletrodomestico
+// }
 
 //recapitulando:
 
@@ -32,17 +34,17 @@ function logarClasse(xuxu: Function) {
 //uma função que retorna um decorator
 
 
-function logarClasseSe(valor: boolean) {
-    return valor ? logarClasse : null
-}
+// function logarClasseSe(valor: boolean) {
+//     return valor ? logarClasse : null
+// }
 
 //ou
 
-function decorator(a: string, b: number) {
-    return function(_: Function): void {
-        console.log(a + ' ' + b)
-    }
-}
+// function decorator(a: string, b: number) {
+//     return function(_: Function): void {
+//         console.log(a + ' ' + b)
+//     }
+// }
 
 
 //Alterando Construtor com Decorator de Class
@@ -128,3 +130,37 @@ class Eletrodomestico {
 
 }
 */
+
+//Desafio 
+
+
+// Desafio Decorator perfilAdmin
+
+const usuarioLogado = {
+    nome: 'Guilherme Filho',
+    email: 'guigui@gmail.com',
+    admin: true
+}
+
+
+@perfilAdmin
+class MudancaAdministrativa {
+    critico() {
+        //se o usuario não estiver logado, ou não for administrador
+        //usuarioLogado  = null ou admin: false
+        console.log('Algo crítico foi alterado!')
+    }
+}
+ 
+new MudancaAdministrativa().critico()
+
+function perfilAdmin<T extends Construtor>(constructor: T) {
+   return class extends constructor {
+       constructor(...args: any[]) {
+           super(...args)
+           if(!usuarioLogado || !usuarioLogado.admin) {
+               throw new Error(`O usuário ${usuarioLogado.email} não tem permissão`)
+           }
+       }
+   }
+}
