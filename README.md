@@ -2,6 +2,7 @@
 <h1>Curso TypesScript</h1>
 <p>Link do curso: <a href="https://www.udemy.com/course/typescript-pt/" target="_blank">Entendendo TypesScript | Udemy</a></p>
 
+<p>Curso concluído: <a href="https://udemy-certificate.s3.amazonaws.com/image/UC-fa8067c1-1f3d-461b-a1d4-df3eead0a991.jpg" target="_blank">Certificado de conclusão</a><p>
 <h2>Módulos</h2>
 <p>Os módulos estão dividos em pastas por <i>Aulas</i></p>
 
