@@ -98,18 +98,20 @@ class contaCorrente {
         this.saldo = saldo;
     }
     sacar(valor) {
-        if (valor <= this.saldo) {
-            this.saldo = valor;
-            return true;
-        }
-        else {
-            return false;
-        }
+        // if(valor <= this.saldo) {
+        this.saldo -= valor;
+        //     return true
+        // } else {
+        //     return false
+        // }
     }
     getSaldo() {
         return ` Seu saldo é R$${this.saldo}`;
     }
 }
+__decorate([
+    naoNegativo //nunca será negativo
+], contaCorrente.prototype, "saldo", void 0);
 __decorate([
     congelar
 ], contaCorrente.prototype, "sacar", null);
@@ -117,7 +119,7 @@ __decorate([
     congelar
 ], contaCorrente.prototype, "getSaldo", null);
 const cc = new contaCorrente(100);
-cc.sacar(50);
+cc.sacar(90);
 console.log(cc.getSaldo());
 // cc.getSaldo = function() {
 //     return this['saldo'] + 7000
@@ -130,4 +132,25 @@ function congelar(alvo, nomeMetodo, descritor) {
     console.log(descritor);
     descritor.writable = false;
 }
+//atributo
+//sera acima de saldo
+function naoNegativo(alvo, nomePropriedade) {
+    //excluir a propriedade e colocar outra
+    delete alvo[nomePropriedade];
+    Object.defineProperty(alvo, nomePropriedade, {
+        get: function () {
+            return alvo['_' + nomePropriedade];
+        },
+        set: function (valor) {
+            if (valor < 0) {
+                throw new Error('Saldo Inválido');
+            }
+            else {
+                alvo['_' + nomePropriedade] = valor;
+            }
+        }
+    });
+}
+cc.sacar(12);
+console.log(cc.getSaldo());
 //# sourceMappingURL=decorators.js.map

@@ -175,6 +175,7 @@ function perfilAdmin<T extends Construtor>(constructor: T) {
 //Decorator método
 
 class contaCorrente {
+    @naoNegativo //nunca será negativo
     private saldo: number
 
     constructor(saldo: number) {
@@ -183,12 +184,12 @@ class contaCorrente {
     
     @congelar
     sacar(valor: number) {
-        if(valor <= this.saldo) {
-            this.saldo = valor
-            return true
-        } else {
-            return false
-        }
+        // if(valor <= this.saldo) {
+            this.saldo -= valor
+        //     return true
+        // } else {
+        //     return false
+        // }
     }
 
     @congelar
@@ -198,7 +199,7 @@ class contaCorrente {
 }
 
 const cc = new contaCorrente(100)
-cc.sacar(50)
+cc.sacar(90)
 console.log(cc.getSaldo())
 
 // cc.getSaldo = function() {
@@ -206,6 +207,7 @@ console.log(cc.getSaldo())
 // }
 
 console.log(cc.getSaldo())
+
 
 
 //object.freeze()
@@ -216,3 +218,27 @@ function congelar(alvo: any, nomeMetodo: string,
         console.log(descritor)
         descritor.writable = false
 }
+
+
+//atributo
+//sera acima de saldo
+
+function naoNegativo(alvo: any, nomePropriedade: string) {
+    //excluir a propriedade e colocar outra
+    delete alvo[nomePropriedade]
+    Object.defineProperty(alvo, nomePropriedade, {
+        get: function(): any {
+            return alvo['_' + nomePropriedade]
+        },
+        set: function(valor: any): void {
+            if(valor < 0 ) {
+                throw new Error('Saldo Inválido')
+            } else {
+                alvo['_' + nomePropriedade] = valor
+            }
+        }
+    })
+}
+
+cc.sacar(12)
+console.log(cc.getSaldo())
