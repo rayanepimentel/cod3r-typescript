@@ -183,13 +183,13 @@ class contaCorrente {
     }
     
     @congelar
-    sacar(valor: number) {
-        // if(valor <= this.saldo) {
+    sacar(@paramInfo valor: number) {
+        if(valor <= this.saldo) {
             this.saldo -= valor
-        //     return true
-        // } else {
-        //     return false
-        // }
+            return true
+        } else {
+            return false
+        }
     }
 
     @congelar
@@ -242,3 +242,15 @@ function naoNegativo(alvo: any, nomePropriedade: string) {
 
 cc.sacar(12)
 console.log(cc.getSaldo())
+
+
+
+
+//Parametro
+
+function paramInfo(alvo: any, nomeMetodo: string, 
+    indiceParam: number) {
+        console.log(`Alvo: ${alvo}`) // a class: {constructor: ƒ, sacar: ƒ, getSaldo: ƒ}
+        console.log(`Método: ${nomeMetodo}`)//Método: sacar
+        console.log(`Indice Param: ${indiceParam}`)//Indice Param: 0
+}
