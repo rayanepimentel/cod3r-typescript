@@ -11,6 +11,8 @@
 
 
 
+
+
 // }
 
 //console.log(typeof Eletrodomestico)//é uma função
@@ -163,4 +165,54 @@ function perfilAdmin<T extends Construtor>(constructor: T) {
            }
        }
    }
+}
+
+
+
+
+
+
+//Decorator método
+
+class contaCorrente {
+    private saldo: number
+
+    constructor(saldo: number) {
+        this.saldo = saldo
+    }
+    
+    @congelar
+    sacar(valor: number) {
+        if(valor <= this.saldo) {
+            this.saldo = valor
+            return true
+        } else {
+            return false
+        }
+    }
+
+    @congelar
+    getSaldo() {
+        return ` Seu saldo é R$${this.saldo}`
+    }
+}
+
+const cc = new contaCorrente(100)
+cc.sacar(50)
+console.log(cc.getSaldo())
+
+// cc.getSaldo = function() {
+//     return this['saldo'] + 7000
+// }
+
+console.log(cc.getSaldo())
+
+
+//object.freeze()
+function congelar(alvo: any, nomeMetodo: string,
+    descritor: PropertyDescriptor) {
+        console.log(alvo)//nome da class
+        console.log(`Nome do metodo: ${nomeMetodo}`)
+        console.log(descritor)
+        descritor.writable = false
 }

@@ -92,4 +92,42 @@ function perfilAdmin(constructor) {
         }
     };
 }
+//Decorator método
+class contaCorrente {
+    constructor(saldo) {
+        this.saldo = saldo;
+    }
+    sacar(valor) {
+        if (valor <= this.saldo) {
+            this.saldo = valor;
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    getSaldo() {
+        return ` Seu saldo é R$${this.saldo}`;
+    }
+}
+__decorate([
+    congelar
+], contaCorrente.prototype, "sacar", null);
+__decorate([
+    congelar
+], contaCorrente.prototype, "getSaldo", null);
+const cc = new contaCorrente(100);
+cc.sacar(50);
+console.log(cc.getSaldo());
+// cc.getSaldo = function() {
+//     return this['saldo'] + 7000
+// }
+console.log(cc.getSaldo());
+//object.freeze()
+function congelar(alvo, nomeMetodo, descritor) {
+    console.log(alvo); //nome da class
+    console.log(`Nome do metodo: ${nomeMetodo}`);
+    console.log(descritor);
+    descritor.writable = false;
+}
 //# sourceMappingURL=decorators.js.map
